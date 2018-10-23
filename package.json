@@ -1,0 +1,25 @@
+{
+  "name": "shri2018-2-performance",
+  "version": "1.0.0",
+  "description": "Оптимизируйте страницу, выложите на GitHub Pages. Зайдите на https://shri-performance.ru и отправьте урл своей страницы.",
+  "main": "src/scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Selnapenek@github.com/Selnapenek/shri2018-2-performance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Selnapenek/shri2018-2-performance/issues"
+  },
+  "homepage": "https://github.com/Selnapenek/shri2018-2-performance#readme",
+  "devDependencies": {
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
