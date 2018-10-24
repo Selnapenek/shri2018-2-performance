@@ -1,0 +1,46 @@
+{
+  "name": "shri2018-2-performance",
+  "version": "1.0.0",
+  "description": "Оптимизируйте страницу, выложите на GitHub Pages. Зайдите на https://shri-performance.ru и отправьте урл своей страницы.",
+  "main": "src/scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Selnapenek@github.com/Selnapenek/shri2018-2-performance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Selnapenek/shri2018-2-performance/issues"
+  },
+  "homepage": "https://github.com/Selnapenek/shri2018-2-performance#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.4",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "imagemin-webpack-plugin": "^2.3.0",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.2.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "svg-url-loader": "^2.3.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
