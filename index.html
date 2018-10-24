@@ -6,10 +6,13 @@
 
     <title>Smarthome</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css" media="none">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
     html {
         height: 100%;
     }
@@ -415,10 +418,27 @@
                             margin-right: 11px;
                         }    
                     </style>
+                    
                     <span class="content__item-header content__item-header_devices">
                         Избранные устройства
                     </span>
-
+                    <style>
+                    .filter__select {
+                        display: none;
+                    }
+                    .filter__item-label {
+                        display: inline-block;
+                        font-size: 13px;
+                        line-height: 1;
+                        font-weight: 700;
+                        background: #f7f7f7;
+                        min-height: 30px;
+                        padding: 8px 13px;
+                        border-radius: 15px;
+                        margin-right: 11px;
+                        cursor: pointer;
+                    }
+                    </style>
                     <div class="filter__select">
                         <button class="filter__select-button" type="button">
                             <span class="button__text">Все</span>
@@ -436,7 +456,11 @@
                             </div>
                         </div>
                     </div>
-
+                    <style>
+                        .filter__item-radio {
+                            display: none;
+                        }
+                    </style>
                     <input class="filter__item-radio filter__item_devices filter__item-radio_all" type="radio" name="filter"
                         id="all" checked>
                     <label class="filter__item-label filter__item_devices" for="all">Все</label>
@@ -453,7 +477,29 @@
                         id="cam">
                     <label class="filter__item-label filter__item_devices" for="cam">Камеры</label>
 
+                    <style>
+                        .paginator {
+                            height: 16px;
+                            width: 47px;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        .devices__paginator {
+                            position: absolute;
+                            top: 0;
+                            right: 40px;
+                        }
+                        .paginator div {
+                            width: 16px;
+                        }
+                    </style>
                     <div class="paginator devices__paginator">
+                        <style>
+                            .paginator__arrow {
+                                opacity: 1;
+                                cursor: pointer;
+                            }
+                        </style>
                         <div class="paginator__arrow paginator__arrow_disabled paginator__arrow_left">
                             <svg viewBox="0 0 9 16" width="100%" height="16px">
                                 <path fill="currentColor" fill-rule="evenodd" d="M8.7 14.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.4 8l6.3 6.3z"></path>
@@ -467,7 +513,41 @@
                         </div>
                     </div>
 
+                    <style>
+                    .devices {
+                        display: flex;
+                        justify-content: flex-start;
+                        overflow-x: hidden;
+                        padding: 20px 0 6px 40px;
+                    }
+                    .devices::after {
+                        content: '';
+                        display: inline-block;
+                        min-width: 25px;
+                    }
+                    </style>
                     <section class="devices">
+                        <style>
+                              .panel {
+                                padding: 14px;
+                                min-height: 100px;
+                                width: 200px;
+                                border-radius: 20px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                flex-shrink: 0;
+                                background: #f7f7f7;
+                                cursor: pointer;
+                                transition: opacity 0.3s ease-out;
+                            }
+                            .panel_device {
+                                height: 120px;
+                            }
+                            .devices__panel {
+                                margin-right: 15px;
+                            }
+                        </style>
                         <div class="panel panel_device devices__panel panel_room panel_floor">
                             <div class="panel__icon panel__icon_light_on"></div>
                             <div class="panel__text">
@@ -529,6 +609,19 @@
             </main>
         </div>
 
+        <style>
+          .footer {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-left: 40px;
+            width: 100%;
+            height: 60px;
+            font-size: 12px;
+        }
+        </style>
         <footer class="footer">
             <a href="#" class="link footer__link">Помощь</a>
             <a href="#" class="link footer__link">Обратная связь</a>
@@ -537,6 +630,22 @@
         </footer>
     </div>
 
+    <style>
+        .modal {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(51, 51, 51, 0.5);
+        }
+    </style>
     <div class="modal modal_temp">
         <div class="modal__content">
 
