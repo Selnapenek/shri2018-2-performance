@@ -56,7 +56,7 @@ module.exports = {
         new ImageminPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
             pngquant: {
-                quality: '60-80'
+                quality: '70-80'
             }
         }),
 
