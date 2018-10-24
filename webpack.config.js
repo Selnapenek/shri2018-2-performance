@@ -57,7 +57,7 @@ module.exports = {
         ]),
 
         new ImageminPlugin({
-            test: /\.(jpe?g|png|gif|svg)$/i,
+            test: /\.(jpe?g|png|webp|svg)$/i,
         }),
 
         // new ExtractTextPlugin({
