@@ -620,3 +620,5 @@
     background: url("assets/panel__icon_clock.svg") center center/contain no-repeat;
   }
   
+
+  @import url("./fonts/pt_sans.css");
