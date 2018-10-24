@@ -22,7 +22,7 @@ module.exports = {
             './js/libs.js',
             './js/scripts.js',
 
-            './css/common.css',
+            // './css/common.css',
             // './css/pt_sans.css',
             // './css/bootstrap.css',
         ],
