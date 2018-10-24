@@ -642,3 +642,12 @@
   .panel__icon_clock {
     background: url("assets/panel__icon_clock.svg") center center/contain no-repeat;
   }
+
+  img {
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+  }
