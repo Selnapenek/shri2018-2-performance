@@ -224,15 +224,7 @@
   .footer__link {
     margin-right: 20px;
   }
-  .header {
-    width: 100%;
-    height: 92px;
-    padding: 0 40px;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: center;
-    background: #fff;
-  }
+
   .knob {
     width: 220px;
     height: 220px;
@@ -296,16 +288,6 @@
   }
   .link_active, .link:hover {
     color: inherit;
-  }
-  .logo {
-    display: inline-block;
-    width: 108px;
-    height: 27px;
-    position: relative;
-    background-image: url("./assets/logo.png");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
   }
   .logo__ya {
     display: block;

@@ -27,7 +27,7 @@ module.exports = {
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
     output: {
-        filename: 'scripts.js',
+        filename: 'scripts.[name].js',
         path: path.resolve(__dirname),
         publicPath: '../'
     },
