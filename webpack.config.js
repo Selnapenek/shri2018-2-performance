@@ -20,9 +20,11 @@ module.exports = {
 
     entry: {
         bundle: [
-            './js/libs.js',
             './js/scripts.js',
             // './scss/styles.scss'
+        ],
+        libs: [
+            './js/libs.js',
         ]
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
@@ -96,40 +98,12 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        cacheDirectory: true, 
                         presets: ['@babel/preset-env']
                     }
                 }
             },
 
-            // scss
-            // {
-            //     test: /\.scss$/,
-            //     include: path.resolve(__dirname, 'src/scss'),
-            //     use: ExtractTextPlugin.extract({
-            //         use: [{
-            //                 loader: "css-loader",
-            //                 options: {
-            //                     minimize: true,
-            //                     url: false
-            //                 }
-            //             },
-            //             // {
-            //             //     loader: "postcss-loader",
-            //             //     options: {
-            //             //         ident: 'postcss',
-            //             //         plugins: [
-            //             //             require('postcss-preset-env'),
-            //             //         ]
-            //             //     }
-            //             // },
-            //             "sass-loader",
-            //         ],
-            //         fallback: 'style-loader',
-            //     })
-            // },
-
-            // css
-            // {
             //     test: /\.css$/,
             //     use: [
             //         MiniCssExtractPlugin.loader,
