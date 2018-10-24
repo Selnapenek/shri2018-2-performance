@@ -19,7 +19,7 @@ module.exports = {
     entry: {
         bundle: [
             './js/scripts.js',
-            './scss/styles.scss'
+            // './scss/styles.scss'
         ]
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
@@ -59,10 +59,10 @@ module.exports = {
             filename: './styles.css',
         }),
 
-        new MiniCssExtractPlugin({
-            filename: './styles.css',
-            allChunks: true,
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: './styles.css',
+        //     allChunks: true,
+        // }),
     ],
 
     optimization: {
