@@ -28,7 +28,6 @@
 </style>
 
 <body class="page">
-    <div id="root"></div>
     <style>
         .page__wrapper {
             display: flex;
@@ -319,6 +318,16 @@
                     <div class="content__item-header">
                         Избранные сценарии
                     </div>
+                    <style>
+                    .scenarios__paginator {
+                        position: absolute;
+                        top: 0;
+                        right: 40px;
+                    }
+                    .scenarios_hide {
+                        display: none;
+                    }
+                    </style>
                     <div class="paginator scenarios__paginator">
                         <div class="paginator__arrow paginator__arrow_disabled paginator__arrow_left">
                             <svg viewBox="0 0 9 16" width="100%" height="16px">
@@ -331,6 +340,24 @@
                             </svg>
                         </div>
                     </div>
+                    <style>
+                        .scenarios {
+                            max-height: 331px;
+                            background: #fff;
+                            display: flex;
+                            justify-content: flex-start;
+                            overflow-x: hidden;
+                        }
+                        .scenarios__page {
+                            display: grid;
+                            grid-template-columns: repeat(3, 200px);
+                            grid-template-rows: repeat(3, 100px);
+                            grid-column-gap: 15px;
+                            grid-row-gap: 15px;
+                            justify-content: space-between;
+                            margin-right: 15px;
+                        }
+                    </style>
                     <section class="scenarios">
                         <div class="scenarios__page">
                             <div class="panel scenarios__panel">
