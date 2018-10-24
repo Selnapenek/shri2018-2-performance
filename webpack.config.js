@@ -10,7 +10,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-// const BrotliPlugin = require('brotli-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
@@ -67,12 +67,12 @@ module.exports = {
         //     allChunks: true,
         // }),
 
-        // new BrotliPlugin({
-		// 	asset: '[path].br[query]',
-		// 	test: /\.(js|css|html|svg)$/,
-		// 	threshold: 10240,
-		// 	minRatio: 0.7
-		// })
+        new BrotliPlugin({
+			asset: '[path].br[query]',
+			test: /\.(js|css|html|svg|png|jpe?g)$/,
+			threshold: 10240,
+			minRatio: 0.8
+		})
     ],
 
     optimization: {
