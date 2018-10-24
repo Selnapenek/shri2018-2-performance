@@ -19,14 +19,14 @@ module.exports = {
 
     entry: {
         bundle: [
-            './js/libs.js',
+            //'./js/libs.js',
             './js/scripts.js',
 
             // './css/common.css',
             // './css/pt_sans.css',
             // './css/bootstrap.css',
         ],
-        // libs: [
+        // libs: [ из-за этого дерьма почему-то верстка типо слетает ...
         //     './js/libs.js',
         // ]
     },
