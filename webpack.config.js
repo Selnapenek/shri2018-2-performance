@@ -3,15 +3,15 @@ const path = require('path');
 const webpack = require('webpack');
 
 // aditional plugins
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const BrotliPlugin = require('brotli-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BrotliPlugin = require('brotli-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 // module settings
@@ -55,26 +55,24 @@ module.exports = {
 
         new ImageminPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
-            pngquant: {
-                quality: '70-80'
-            }
+
         }),
 
-        new ExtractTextPlugin({
-            filename: './styles.css',
-        }),
+        // new ExtractTextPlugin({
+        //     filename: './styles.css',
+        // }),
 
-        new MiniCssExtractPlugin({
-            filename: './styles.css',
-            allChunks: true,
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: './styles.css',
+        //     allChunks: true,
+        // }),
 
-        new BrotliPlugin({
-			asset: '[path].br[query]',
-			test: /\.(js|css|html|svg)$/,
-			threshold: 10240,
-			minRatio: 0.7
-		})
+        // new BrotliPlugin({
+		// 	asset: '[path].br[query]',
+		// 	test: /\.(js|css|html|svg)$/,
+		// 	threshold: 10240,
+		// 	minRatio: 0.7
+		// })
     ],
 
     optimization: {
