@@ -19,7 +19,7 @@ module.exports = {
     entry: {
         bundle: [
             './js/scripts.js',
-            './scss/styles.scss'
+            // './scss/styles.scss'
         ]
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
@@ -92,31 +92,31 @@ module.exports = {
             },
 
             // scss
-            {
-                test: /\.scss$/,
-                include: path.resolve(__dirname, 'src/scss'),
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                            loader: "css-loader",
-                            options: {
-                                minimize: true,
-                                url: false
-                            }
-                        },
-                        // {
-                        //     loader: "postcss-loader",
-                        //     options: {
-                        //         ident: 'postcss',
-                        //         plugins: [
-                        //             require('postcss-preset-env'),
-                        //         ]
-                        //     }
-                        // },
-                        "sass-loader",
-                    ],
-                    fallback: 'style-loader',
-                })
-            },
+            // {
+            //     test: /\.scss$/,
+            //     include: path.resolve(__dirname, 'src/scss'),
+            //     use: ExtractTextPlugin.extract({
+            //         use: [{
+            //                 loader: "css-loader",
+            //                 options: {
+            //                     minimize: true,
+            //                     url: false
+            //                 }
+            //             },
+            //             // {
+            //             //     loader: "postcss-loader",
+            //             //     options: {
+            //             //         ident: 'postcss',
+            //             //         plugins: [
+            //             //             require('postcss-preset-env'),
+            //             //         ]
+            //             //     }
+            //             // },
+            //             "sass-loader",
+            //         ],
+            //         fallback: 'style-loader',
+            //     })
+            // },
 
             // css
             // {
