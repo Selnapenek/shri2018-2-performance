@@ -214,9 +214,6 @@
   .link_active, .link:hover {
     color: inherit;
   }
-  .modal_open {
-    display: flex;
-  }
   .modal_open .modal__content {
     animation: modal 0.2s ease forwards;
   }
