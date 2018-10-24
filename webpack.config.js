@@ -55,14 +55,8 @@ module.exports = {
 
         new ImageminPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
-            svgo: {
-
-            },
-            optipng: {
-                optimizationLevel: 9
-            },
             pngquant: {
-                quality: '60-70'
+                quality: '60-80'
             }
         }),
 
