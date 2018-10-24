@@ -119,13 +119,13 @@ module.exports = {
             },
 
             // css
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader"
-                ]
-            },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         "css-loader"
+            //     ]
+            // },
 
             // Img TODO: таксс.... не работает и свг тоже =(
             {
