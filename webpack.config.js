@@ -33,14 +33,14 @@ module.exports = {
         // new CleanWebpackPlugin(['css','js']),
 
         new CopyWebpackPlugin([
-            // {
-            //     from: './assets/img',
-            //     to: 'assets'
-            // },
-            // {
-            //     from: './assets/svg',
-            //     to: 'assets'
-            // },
+            {
+                from: './assets/img',
+                to: 'assets'
+            },
+            {
+                from: './assets/svg',
+                to: 'assets'
+            },
             {
                 from: './assets/fonts',
                 to: 'fonts'
@@ -48,12 +48,12 @@ module.exports = {
 
         ]),
 
-        // new ImageminPlugin({
-        //     test: /\.(jpe?g|png|gif|svg)$/i,
-        //     pngquant: {
-        //         quality: '60-70'
-        //     }
-        // }),
+        new ImageminPlugin({
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            pngquant: {
+                quality: '70-80'
+            }
+        }),
 
         new ExtractTextPlugin({
             filename: './styles.css',
