@@ -100,49 +100,49 @@ module.exports = {
             },
 
             // css
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            url: false
-                        }
-                    },
-                ]
-            },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         {
+            //             loader: 'css-loader',
+            //             options: {
+            //                 url: false
+            //             }
+            //         },
+            //     ]
+            // },
 
             // Img TODO: таксс.... не работает и свг тоже =(
-            {
-                test: /\.(png|jpeg)$/,
-                loaders: [{
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]'
-                        },
-                    },
-                    'img-loader'
-                ],
-            },
+            // {
+            //     test: /\.(png|jpeg)$/,
+            //     loaders: [{
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: '[path][name].[ext]'
+            //             },
+            //         },
+            //         'img-loader'
+            //     ],
+            // },
 
-            // svg
-            {
-                test: /\.svg/,
-                loader: 'svg-url-loader',
-                options: {}
-            },
+            // // svg
+            // {
+            //     test: /\.svg/,
+            //     loader: 'svg-url-loader',
+            //     options: {}
+            // },
 
-            // fonts
-            {
-                test: /\.(woff | woff2 | eot | ttf | of )/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]'
-                    },
-                }]
-            },
+            // // fonts
+            // {
+            //     test: /\.(woff | woff2 | eot | ttf | of )/,
+            //     use: [{
+            //         loader: 'file-loader',
+            //         options: {
+            //             name: '[path][name].[ext]'
+            //         },
+            //     }]
+            // },
         ],
     },
 
