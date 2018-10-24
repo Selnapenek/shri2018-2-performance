@@ -106,32 +106,6 @@
   .button:active {
     box-shadow: none;
   }
-  .content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 29px;
-  }
-  .content__item {
-    width: 100%;
-    margin-bottom: 29px;
-    position: relative;
-  }
-  .content__item_half {
-    width: 49%;
-  }
-  .content__item_main {
-    padding-left: 40px;
-  }
-  .content__item_scenarios {
-    padding-right: 40px;
-  }
-  .content__item-header {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
   .content__item-header_devices {
     padding-left: 40px;
     display: inline-block;
@@ -225,15 +199,6 @@
   .footer__link {
     margin-right: 20px;
   }
-  .header {
-    width: 100%;
-    height: 92px;
-    padding: 0 40px;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: center;
-    background: #fff;
-  }
   .knob {
     width: 220px;
     height: 220px;
@@ -297,94 +262,6 @@
   }
   .link_active, .link:hover {
     color: inherit;
-  }
-  .logo {
-    display: inline-block;
-    width: 108px;
-    height: 27px;
-    position: relative;
-    background-image: url("./assets/logo.png");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
-  }
-  .logo__ya {
-    display: block;
-    position: absolute;
-    z-index: 10;
-    outline: 0;
-    height: 100%;
-    width: 69px;
-    left: 0;
-    top: 0;
-  }
-  .logo__ya-sub {
-    display: block;
-    position: absolute;
-    z-index: 5;
-    outline: 0;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-  .main {
-    height: 331px;
-    border-radius: 20px;
-    padding: 0 20px 0 25px;
-    display: flex;
-    justify-content: space-between;
-    background: url("assets/sh.png") center center/cover no-repeat;
-  }
-  .main__greeting {
-    margin-top: 6px;
-    font-size: 27px;
-    font-weight: 700;
-  }
-  .main__info {
-    width: 61.585%;
-    padding-top: 20px;
-    padding-left: 20px;
-    background: rgba(255,255,255,0.6);
-  }
-  .main__panel {
-    margin-bottom: 14px;
-    position: relative;
-  }
-  .main__status {
-    margin-top: 6px;
-    line-height: 16px;
-  }
-  .main__upcoming {
-    width: 220px;
-    height: 100%;
-    overflow-y: scroll;
-  }
-  .main__upcoming-wrapper {
-    width: 200px;
-    height: 100%;
-    overflow: hidden;
-  }
-  .main__weather {
-    margin-top: 25px;
-  }
-  .menu {
-    margin-left: 52px;
-  }
-  .menu__icon {
-    display: none;
-  }
-  .menu__item {
-    margin-right: 27px;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  .menu__list {
-    display: flex;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
   .modal {
     display: none;
@@ -467,26 +344,7 @@
   * {
     box-sizing: border-box;
   }
-  html {
-    height: 100%;
-  }
-  .page {
-    height: 100%;
-    font: 14px Arial, sans-serif;
-    color: #333;
-    line-height: 1.143;
-    margin: 0 auto;
-    padding: 0;
-    width: 1366px;
-  }
-  .page__wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .page__wrapper-content {
-    flex: 1 0 auto;
-  }
+
   .paginator {
     height: 16px;
     width: 47px;
@@ -572,28 +430,6 @@
   }
   .scenarios_hide {
     display: none;
-  }
-  .weather {
-    display: flex;
-  }
-  .weather__item {
-    margin-right: 18px;
-  }
-  .weather__item-title {
-    color: #858585;
-    margin-bottom: 4px;
-  }
-  .weather__item-temp {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.16;
-    font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  .weather__item_outside {
-    padding-right: 31px;
-  }
-  .weather__item_cloud-drizzle {
-    background: url("assets/cloud-drizzle.png") 100% 70%/26px no-repeat;
   }
   .stats {
     opacity: 0;

@@ -11,6 +11,9 @@
 </head>
 
 <style>
+    html {
+        height: 100%;
+    }
     .page {
     height: 100%;
     font: 14px Arial, sans-serif;
@@ -76,10 +79,41 @@
                         }    
                     </style>
                     <a href="yandex.ru" class="link logo__ya"></a>
+                    <style>
+                          .logo__ya-sub {
+                            display: block;
+                            position: absolute;
+                            z-index: 5;
+                            outline: 0;
+                            height: 100%;
+                            width: 100%;
+                            left: 0;
+                            top: 0;
+                        }
+                    </style>
                     <a href="#" class="link logo__ya-sub"></a>
                 </div>
-
+                
+                <style>
+                    .menu {
+                        margin-left: 52px;
+                    }
+                </style>
                 <nav class="menu">
+                    <style>
+                        .menu__list {
+                            display: flex;
+                            justify-content: flex-start;
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }    
+                        .menu__item {
+                            margin-right: 27px;
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+                    </style>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <a href="#" class="link menu__link link_active">Сводка</a>
@@ -92,6 +126,11 @@
                         </li>
                     </ul>
                 </nav>
+                <style>
+                    .menu__icon {
+                        display: none;
+                    }
+                </style>
                 <div class="menu__icon">
                     <svg width="16" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <defs>
@@ -102,28 +141,142 @@
                     </svg>
                 </div>
             </header>
-
+            
+            <style>
+                .content {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding-top: 29px;
+                }
+            </style>
             <main class="content">
-
+                <style>
+                    .content__item {
+                        width: 100%;
+                        margin-bottom: 29px;
+                        position: relative;
+                    }
+                    .content__item_half {
+                        width: 49%;
+                    }
+                    .content__item_main {
+                        padding-left: 40px;
+                    }
+                    .content__item-header {
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                    }
+                    
+                </style>
                 <div class="content__item content__item_half content__item_main">
                     <div class="content__item-header">Главное</div>
+                    <style>
+                        .main {
+                            height: 331px;
+                            border-radius: 20px;
+                            padding: 0 20px 0 25px;
+                            display: flex;
+                            justify-content: space-between;
+                            background: url("assets/sh.png") center center/cover no-repeat;
+                        }
+                    </style>
                     <section class="main">
+                        <style>
+                            .main__info {
+                                width: 61.585%;
+                                padding-top: 20px;
+                                padding-left: 20px;
+                                background: rgba(255,255,255,0.6);
+                            }
+                        </style>
                         <div class="main__info">
+                            <style>
+                                .main__greeting {
+                                    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                    margin-top: 6px;
+                                    font-size: 27px;
+                                    font-weight: 700;
+                                }
+                            </style>
                             <div class="main__greeting">Привет, Геннадий!</div>
+                            <style>
+                                .main__status {
+                                    margin-top: 6px;
+                                    line-height: 16px;
+                                }
+                            </style>
                             <div class="main__status">Двери и окна закрыты, сигнализация включена.</div>
+                            <style>
+                                .main__weather {
+                                    margin-top: 25px;
+                                }
+                                .weather {
+                                    display: flex;
+                                }
+                            </style>
                             <div class="weather main__weather">
+                                <style>
+                                    .weather__item {
+                                        margin-right: 18px;
+                                    }    
+                                </style>
                                 <div class="weather__item">
+                                    <style>
+                                        .weather__item-title {
+                                            color: #858585;
+                                            margin-bottom: 4px;
+                                        }
+                                    </style>
                                     <div class="weather__item-title">Дома</div>
+                                    <style>
+                                        .weather__item-temp {
+                                            font-size: 36px;
+                                            font-weight: 700;
+                                            line-height: 1.16;
+                                            font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                        }
+                                    </style>
                                     <div class="weather__item-temp">+23</div>
                                 </div>
+                                <style>
+                                    .weather__item_outside {
+                                        padding-right: 31px;
+                                    }
+                                    .weather__item_cloud-drizzle {
+                                        background: url("assets/cloud-drizzle.png") 100% 70%/26px no-repeat;
+                                    }
+                                </style>
                                 <div class="weather__item weather__item_outside weather__item_cloud-drizzle">
                                     <div class="weather__item-title">За окном</div>
                                     <div class="weather__item-temp">+19</div>
                                 </div>
                             </div>
                         </div>
+                        <style>
+                            .main__upcoming-wrapper {
+                                width: 200px;
+                                height: 100%;
+                                overflow: hidden;
+                            }
+                        </style>
                         <div class="main__upcoming-wrapper">
+                            <style>
+                            .main__upcoming {
+                                width: 220px;
+                                height: 100%;
+                                overflow-y: scroll;
+                            }
+                            </style>
                             <div class="main__upcoming">
+                                <style>
+                                .main__panel {
+                                    margin-bottom: 14px;
+                                    position: relative;
+                                }
+                                </style>
                                 <div class="panel main__panel panel_device panel_first">
                                     <div class="panel__icon panel__icon_temp_off"></div>
                                     <div class="panel__text">
@@ -147,7 +300,7 @@
                                 </div>
                                 <div class="panel main__panel panel_device panel_out_bot">
                                     <a target="_blank" href="http://ya.ru">
-                                        <img src="assets/banner.jpg" border="0">
+                                        <img src="assets/banner.jpg">
                                     </a>
                                 </div>
                             </div>
@@ -155,6 +308,11 @@
                     </section>
                 </div>
 
+                <style>
+                    .content__item_scenarios {
+                        padding-right: 40px;
+                    }
+                </style>
                 <div class="content__item content__item_half content__item_scenarios">
                     <div class="content__item-header">
                         Избранные сценарии
@@ -251,6 +409,13 @@
                 </div>
 
                 <div class="content__item content__item_devices">
+                    <style> 
+                        .content__item-header_devices {
+                            padding-left: 40px;
+                            display: inline-block;
+                            margin-right: 11px;
+                        }    
+                    </style>
                     <span class="content__item-header content__item-header_devices">
                         Избранные устройства
                     </span>
@@ -475,11 +640,6 @@
 
     <script src="scripts.js"></script>
     <link href="bootstrap.css" rel="stylesheet" media="screen">
-    <style type="text/css">
-        .main__greeting {
-            font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-    </style>
 
 </body>
 
