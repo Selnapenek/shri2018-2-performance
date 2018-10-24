@@ -20,12 +20,13 @@ module.exports = {
 
     entry: {
         bundle: [
+            './js/libs.js',
             './js/scripts.js',
             // './scss/styles.scss'
         ],
-        libs: [
-            './js/libs.js',
-        ]
+        // libs: [
+        //     './js/libs.js',
+        // ]
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
     output: {
