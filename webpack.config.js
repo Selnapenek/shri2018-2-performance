@@ -20,8 +20,8 @@ module.exports = {
 
     entry: {
         bundle: [
-            './js/libs.js',
-            './js/scripts.js',
+            // './js/libs.js',
+            // './js/scripts.js',
             // './scss/styles.scss'
         ]
     },
