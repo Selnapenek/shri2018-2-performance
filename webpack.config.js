@@ -42,24 +42,26 @@ module.exports = {
 
         // new BundleAnalyzerPlugin(),
 
-        new CopyWebpackPlugin([{
-                from: './assets/img',
-                to: 'assets'
-            },
-            {
-                from: './assets/svg',
-                to: 'assets'
-            },
-            {
-                from: './assets/fonts',
-                to: 'fonts'
-            }
+        // new CopyWebpackPlugin([{
+        //         from: './assets/img',
+        //         to: 'assets'
+        //     },
+        //     {
+        //         from: './assets/svg',
+        //         to: 'assets'
+        //     },
+        //     {
+        //         from: './assets/fonts',
+        //         to: 'fonts'
+        //     }
 
-        ]),
+        // ]),
 
-        new ImageminPlugin({
-            test: /\.(jpe?g|png|webp|svg)$/i,
-        }),
+        // Оптимизировал по максимуму
+
+        // new ImageminPlugin({
+        //     test: /\.(jpe?g|png|webp|svg)$/i,
+        // }),
 
         new MiniCssExtractPlugin({
             filename: 'styles.css',
