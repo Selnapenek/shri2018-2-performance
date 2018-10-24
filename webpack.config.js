@@ -48,12 +48,12 @@ module.exports = {
 
         ]),
 
-        new ImageminPlugin({
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            pngquant: {
-                quality: '70-80'
-            }
-        }),
+        // new ImageminPlugin({
+        //     test: /\.(jpe?g|png|gif|svg)$/i,
+        //     pngquant: {
+        //         quality: '70-80'
+        //     }
+        // }),
 
         new ExtractTextPlugin({
             filename: './styles.css',
@@ -103,15 +103,15 @@ module.exports = {
                                 url: false
                             }
                         },
-                        {
-                            loader: "postcss-loader",
-                            options: {
-                                ident: 'postcss',
-                                plugins: [
-                                    require('postcss-preset-env'),
-                                ]
-                            }
-                        },
+                        // {
+                        //     loader: "postcss-loader",
+                        //     options: {
+                        //         ident: 'postcss',
+                        //         plugins: [
+                        //             require('postcss-preset-env'),
+                        //         ]
+                        //     }
+                        // },
                         "sass-loader",
                     ],
                     fallback: 'style-loader',
