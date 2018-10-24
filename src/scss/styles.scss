@@ -12,3 +12,65 @@ img {
     border: 0;
     -ms-interpolation-mode: bicubic;
 }
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    color: #222222;
+    background-color: #ffffff;
+}
+
+li {
+    line-height: 20px;
+  }
+
+a:hover,
+a:focus {
+    color: #354b60;
+    text-decoration: underline;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
