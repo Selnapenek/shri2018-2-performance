@@ -5,11 +5,13 @@ const webpack = require('webpack');
 // aditional plugins
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BrotliPlugin = require('brotli-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 // module settings
@@ -18,6 +20,7 @@ module.exports = {
 
     entry: {
         bundle: [
+            './js/libs.js',
             './js/scripts.js',
             // './scss/styles.scss'
         ]
@@ -31,6 +34,8 @@ module.exports = {
 
     plugins: [
         // new CleanWebpackPlugin(['css','js']),
+
+        // new BundleAnalyzerPlugin(),
 
         new CopyWebpackPlugin([
             {
@@ -50,6 +55,12 @@ module.exports = {
 
         new ImageminPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
+            svgo: {
+
+            },
+            optipng: {
+                optimizationLevel: 9
+            },
             pngquant: {
                 quality: '60-70'
             }
@@ -63,6 +74,13 @@ module.exports = {
             filename: './styles.css',
             allChunks: true,
         }),
+
+        new BrotliPlugin({
+			asset: '[path].br[query]',
+			test: /\.(js|css|html|svg)$/,
+			threshold: 10240,
+			minRatio: 0.7
+		})
     ],
 
     optimization: {

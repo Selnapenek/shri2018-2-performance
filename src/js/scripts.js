@@ -1,5 +1,3 @@
-const iDontKnow = require('./iDontKnow');
-const gui = require('./gui');
+import gui from './gui';
 
-iDontKnow();
 gui();
