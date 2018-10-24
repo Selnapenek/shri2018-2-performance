@@ -7,8 +7,12 @@
     <title>Smarthome</title>
 
     <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 
 <body class="page">
 <div id="root"></div>
@@ -43,7 +47,7 @@
                 </svg>
             </div>
         </header>
-        
+
         <main class="content">
 
             <div class="content__item content__item_half content__item_main">
@@ -87,9 +91,9 @@
                                 </div>
                             </div>
                             <div class="panel main__panel panel_device panel_out_bot">
-                                <a target="_blank" href="http://ya.ru">
-                                    <img src="assets/banner.jpg" border="0">
-                                </a>
+                                    <a target="_blank" href="http://ya.ru">
+                                        <img src="assets/banner.jpg" border="0">
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -194,12 +198,30 @@
 
                     <div class="scenarios__page">
                         <div class="panel scenarios__panel">
-                                <div class="panel__icon panel__icon_clock"></div>
-                                <div class="panel__text">
-                                    <div class="panel__title">Я ухожу</div>
-                                </div>
+                            <div class="panel__icon panel__icon_light_on"></div>
+                            <div class="panel__text">
+                                <div class="panel__title">Включить свет в корридоре</div>
+                            </div>
                         </div>
                     </div>
+
+                    <script type="text/babel">
+                        class App extends React.Component {
+                            render() {
+                                return (
+                                    <div class="panel scenarios__panel">
+                                        <div class="panel__icon panel__icon_clock"></div>
+                                        <div class="panel__text">
+                                            <div class="panel__title">Я ухожу</div>
+                                        </div>
+                                    </div>
+                                );
+                            }
+                        }
+
+                        ReactDOM.render(<App />, document.getElementsByClassName('scenarios__page')[1]);
+                    </script>
+
                 </section>
             </div>
 
@@ -383,6 +405,8 @@
         </div>
     </div>
 </div>
+<div class="stats">
+</div>
 
 <div class="modal modal_knob">
     <div class="modal__content">
@@ -430,7 +454,6 @@
 
 
 <script src="scripts.js"></script>
-
 <style type="text/css">
     .main__greeting {
         font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
