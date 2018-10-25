@@ -1,4 +1,27 @@
 export default function () {
+    // Fonts
+    const fontPTSans = new FontFace("PT Sans", "url('./fonts/PTS75F_W.woff') format('woff')", {
+        style: 'normal', weight: 'bold'
+    });
+      
+    fontPTSans.load();
+    fontPTSans.ready().then(function() {
+        document.fonts.add(fontPTSans);
+        document.body.style.fontFamily = "PT Sans";
+    });
+
+    const fontPTSansNarrow = new FontFace("PT Sans Narrow", "url('./fonts/PTS77F_W.woff') format('woff')", {
+        weight: 'bold'
+    });
+      
+    fontPTSansNarrow.load();
+    fontPTSansNarrow.ready().then(function() {
+        document.fonts.add(fontPTSansNarrow);
+        document.body.style.fontFamily = "PT Sans Narrow";
+    });
+
+
+    // GUI TODO: Посмотреть чо тут можно сдлеать
     const output = document.querySelector('.modal__value');
     const rangeSLider = document.querySelector('.adjust-bar.adjust-bar_theme_temp');
 
