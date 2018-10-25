@@ -1,6 +1,6 @@
 export default function () {
     // fonts
-    const fontPTSans = new FontFace("PT Sans", "url('./fonts/PTS75F_W.woff') format('woff')", {
+    const fontPTSans = new FontFace("PT Sans", "url('../fonts/PTS75F_W.woff') format('woff')", {
         style: 'normal', weight: 'bold'
     });
       
@@ -9,7 +9,7 @@ export default function () {
         document.fonts.add(fontPTSans);
     });
 
-    const fontPTSansNarrow = new FontFace("PT Sans Narrow", "url('./fonts/PTS77F_W.woff') format('woff')", {
+    const fontPTSansNarrow = new FontFace("PT Sans Narrow", "url('../fonts/PTS77F_W.woff') format('woff')", {
         weight: 'bold'
     });
       
