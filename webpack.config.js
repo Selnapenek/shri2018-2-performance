@@ -23,12 +23,7 @@ module.exports = {
             './js/scripts.js',
 
             // './css/common.css',
-            // './css/pt_sans.css',
-            // './css/bootstrap.css',
         ],
-        // libs: [ из-за этого дерьма почему-то верстка типо слетает ...
-        //     './js/libs.js',
-        // ]
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
     output: {
@@ -63,9 +58,9 @@ module.exports = {
         //     test: /\.(jpe?g|png|webp|svg)$/i,
         // }),
 
-        new MiniCssExtractPlugin({
-            filename: 'styles.css',
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: 'styles.css',
+        // }),
 
         new BrotliPlugin({
             asset: '[path].br[query]',
@@ -113,37 +108,6 @@ module.exports = {
             //             }
             //         },
             //     ]
-            // },
-
-            // Img TODO: таксс.... не работает и свг тоже =(
-            // {
-            //     test: /\.(png|jpeg)$/,
-            //     loaders: [{
-            //             loader: 'file-loader',
-            //             options: {
-            //                 name: '[path][name].[ext]'
-            //             },
-            //         },
-            //         'img-loader'
-            //     ],
-            // },
-
-            // // svg
-            // {
-            //     test: /\.svg/,
-            //     loader: 'svg-url-loader',
-            //     options: {}
-            // },
-
-            // // fonts
-            // {
-            //     test: /\.(woff | woff2 | eot | ttf | of )/,
-            //     use: [{
-            //         loader: 'file-loader',
-            //         options: {
-            //             name: '[path][name].[ext]'
-            //         },
-            //     }]
             // },
         ],
     },
