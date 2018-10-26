@@ -7,11 +7,11 @@ export default function () {
         output.innerHTML = this.value > 0 ? '+' + this.value : this.value;
     }
 
-    const arrowLeftDevs = document.querySelector('.devices__paginator .paginator__arrow_left');
-    const arrowRightDevs = document.querySelector('.devices__paginator .paginator__arrow_right');
-    const panelCountDevs = document.querySelectorAll('.devices__panel').length;
     const devices = document.querySelector('.devices');
-    const pagiantorDevs = document.querySelector('.devices__paginator');
+    const panelCountDevs = devices.querySelectorAll('.devices__panel').length;
+    const pagiantorDevs = devices.querySelector('.devices__paginator');
+    const arrowLeftDevs = pagiantorDevs.querySelector('.devices__paginator .paginator__arrow_left');
+    const arrowRightDevs = pagiantorDevs.querySelector('.devices__paginator .paginator__arrow_right');
     let currentPageDevs = 1;
 
     pagiantorDevs.classList.toggle('paginator_hide', panelCountDevs < 7);
@@ -52,6 +52,8 @@ export default function () {
     }
 
 
+    const modal_knob = document.querySelector('.modal_knob');
+
     /**
      * @param {Number} rotate Количество оборотов от нейтриального положения.
      */
@@ -65,10 +67,10 @@ export default function () {
         curRotate = rotate;
         curValue = rotateToValue(rotate);
 
-        document.querySelector('.modal_knob .modal__value').innerHTML = '+' + curValue;
-        document.querySelector('.knob__value').innerHTML = '+' + curValue;
-        document.querySelector('.knob__indicator').style.strokeDasharray = curRotate * 360 * 1.73 + INDICATOR_OFFSET + ' 629';
-        document.querySelector('.knob__arrow').style.transform = 'rotate(' + (curRotate * 360) + 'deg)';
+        modal_knob.querySelector('.modal__value').innerHTML = '+' + curValue;
+        modal_knob.querySelector('.knob__value').innerHTML = '+' + curValue;
+        modal_knob.querySelector('.knob__indicator').style.strokeDasharray = curRotate * 360 * 1.73 + INDICATOR_OFFSET + ' 629';
+        modal_knob.querySelector('.knob__arrow').style.transform = 'rotate(' + (curRotate * 360) + 'deg)';
     }
 
     function getPosition(elem) {
@@ -198,12 +200,13 @@ export default function () {
         }
     });
 
-    const arrowLeftScens = document.querySelector('.scenarios__paginator .paginator__arrow_left');
-    const arrowRightScens = document.querySelector('.scenarios__paginator .paginator__arrow_right');
-    const panelCountScens = document.querySelectorAll('.scenarios__panel').length;
-    const pageCountScens = document.querySelectorAll('.scenarios__page').length;
     const scenarios = document.querySelector('.scenarios');
+    const panelCountScens = scenarios.querySelectorAll('.scenarios__panel').length;
+    const pageCountScens = scenarios.querySelectorAll('.scenarios__page').length;
     const pagiantorScens = document.querySelector('.scenarios__paginator');
+    const arrowLeftScens = pagiantorScens.querySelector('.scenarios__paginator .paginator__arrow_left');
+    const arrowRightScens = pagiantorScens.querySelector('.scenarios__paginator .paginator__arrow_right');
+   
     let currentPage = 1;
 
     pagiantorScens.classList.toggle('paginator_hide', panelCountScens <= 9);
@@ -254,8 +257,9 @@ export default function () {
         })
     });
 
-    document.querySelector('.menu__icon').addEventListener('click', function () {
-        document.querySelector('.menu').classList.toggle('menu_open');
-    });
+    // Вот эта штука не используется
+    // document.querySelector('.menu__icon').addEventListener('click', function () {
+    //     document.querySelector('.menu').classList.toggle('menu_open');
+    // });
 
 }
