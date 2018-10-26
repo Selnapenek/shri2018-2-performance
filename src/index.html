@@ -6,27 +6,25 @@
 
     <title>Smarthome</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <!-- <link rel="preload" href="scripts.bundle.js" as="script" crossorigin="anonymous">
+
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            // Весь код регистрации у нас асинхронный.
+            navigator.serviceWorker.register('./sw.js')
+            .then(() => navigator.serviceWorker.ready.then((worker) => {
+                worker.sync.register('syncdata');
+            }))
+            .catch((err) => console.log(err));
+        }
+    </script> -->
+
     <link rel="preload" href="fonts/PTS75F_W.woff" as="font" type="font/woff" crossorigin="anonymous">
-    <link rel="preload" href="fonts/PTN77F_W.woff" as="font" type="font/woff" crossorigin="anonymous"> -->
+    <link rel="preload" href="fonts/PTN77F_W.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="scripts.bundle.js" as="script" crossorigin="anonymous">
+
 </head>
 
 <style>
-    @font-face {
-        font-family: 'PT Sans';
-        font-style: normal;
-        font-weight: bold;
-        font-display: fallback;
-        src: local('PT Sans Bold'), 
-            url('./fonts/PTS75F_W.woff') format('woff');
-    }
-    @font-face {
-        font-family: 'PT Sans Narrow';
-        font-weight: bold;
-        font-display: fallback;
-        src: local('PT Sans Narrow Bold'),
-            url('./fonts/PTN77F_W.woff') format('woff');
-    }
     * {
         box-sizing: border-box;
     }
@@ -198,7 +196,7 @@
                             padding: 0 20px 0 25px;
                             display: flex;
                             justify-content: space-between;
-                            background: url("assets/sh.webp") center center/cover no-repeat;
+                            background: url("assets/sh_2500.webp") center center/cover no-repeat;
                         }
                     </style>
                     <section class="main">
@@ -314,7 +312,7 @@
                                     </div>
                                 </div>
                                 <div class="panel main__panel panel_device panel_out_bot">
-                                    <img src="assets/banner.jpg">
+                                    <img src="assets/banner_200.jpg">
                                 </div>
                             </div>
                         </div>
@@ -790,6 +788,22 @@
 
     <script async src="scripts.bundle.js" crossorigin="anonymous"></script>
     <style>
+
+    @font-face {
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: bold;
+        font-display: swap;
+        src: local('PT Sans Bold'), 
+            url('./fonts/PTS75F_W.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'PT Sans Narrow';
+        font-weight: bold;
+        font-display: swap;
+        src: local('PT Sans Narrow Bold'),
+            url('./fonts/PTN77F_W.woff') format('woff');
+    }
     .adjust-bar {
         -webkit-appearance: none;
         appearance: none;
