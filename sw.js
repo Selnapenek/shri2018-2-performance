@@ -7,7 +7,6 @@ self.addEventListener('install', (event) => {
                 './fonts/PTN77F_W.woff',
                 './fonts/PTS75F_W.woff',
                 './assets/sh_2500.webp',
-                './assets/banner_200.jpg'
             ])
         ));
 });
@@ -16,7 +15,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
     event.respondWith(fromNetwork(event.request, timeout)
       .catch((err) => {
-          console.log(`Error: ${err.message()}`);
+          console.log('Error:' + err.message);
           return fromCache(event.request);
       }));
 });
