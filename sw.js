@@ -4,7 +4,8 @@ const timeout = 200;
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE).then((cache) => cache.addAll([
-                'fonts',
+                'fonts/PTN77F_W.woff',
+                'fonts/PTS75F_W.woff',
                 'assets/sh_2500.webp',
                 'assets/banner_200.jpg'
             ])
