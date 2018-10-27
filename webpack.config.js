@@ -59,6 +59,15 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             inject: false,
+            minify:{
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true,
+                minifyCSS: true
+            },
             template: './index.html',
             filename: 'index.html'
         }),
