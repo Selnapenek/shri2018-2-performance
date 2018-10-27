@@ -1,1 +1,600 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Smarthome</title><link rel="shortcut icon" href="favicon.ico"><link rel="preload" href="fonts/PTS75F_W.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="fonts/PTN77F_W.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="scripts.bundle.js" as="script" crossorigin="anonymous"></head><style>*{box-sizing:border-box}html{height:100%}.page{height:100%;font:14px Arial,sans-serif;color:#333;line-height:1.143;margin:0 auto;padding:0;width:1366px}</style><body class="page"><style>.page__wrapper{display:flex;flex-direction:column;height:100%}</style><div class="page__wrapper"><style>.page__wrapper-content{flex:1 0 auto}</style><div class="page__wrapper-content"><style>.header{width:100%;height:92px;padding:0 40px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;background:#fff}</style><header class="header"><style>.logo{display:inline-block;width:108px;height:27px;position:relative;background-image:url(data:image/png;base64,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);background-repeat:no-repeat;background-position:left top;background-size:cover}</style><div class="logo header__logo"><style>.logo__ya{display:block;position:absolute;z-index:10;outline:0;height:100%;width:69px;left:0;top:0}</style><a href="yandex.ru" class="link logo__ya"></a><style>.logo__ya-sub{display:block;position:absolute;z-index:5;outline:0;height:100%;width:100%;left:0;top:0}</style><a href="#" class="link logo__ya-sub"></a></div><style>.menu{margin-left:52px}</style><nav class="menu"><style>.menu__list{display:flex;justify-content:flex-start;list-style:none;padding:0;margin:0}.menu__item{margin-right:27px;font-size:16px;font-weight:700}</style><ul class="menu__list"><li class="menu__item"><a href="#" class="link menu__link link_active">Сводка</a></li><li class="menu__item"><a href="#" class="link menu__link">Устройства</a></li><li class="menu__item"><a href="#" class="link menu__link">Сценарии</a></li></ul></nav><style>.menu__icon{display:none}</style><div class="menu__icon"><svg width="16" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 3.326a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.681A.995.995 0 0 1 15 5H1c-.552 0-1-.44-1-.993v-.68zM0 8.66a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .993H1c-.552 0-1-.44-1-.993v-.68zm0 5.333A.995.995 0 0 1 1 13h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .994H1c-.552 0-1-.44-1-.993v-.681z" id="a"/></defs><use fill="#333" xlink:href="#a" transform="translate(0 -2)" fill-rule="evenodd"/></svg></div></header><style>.content{width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;padding-top:29px}</style><main class="content"><style>.content__item{width:100%;margin-bottom:29px;position:relative}.content__item_half{width:49%}.content__item_main{padding-left:40px}.content__item-header{font-size:18px;font-weight:700;margin-bottom:20px}</style><div class="content__item content__item_half content__item_main"><div class="content__item-header">Главное</div><style>.main{height:331px;border-radius:20px;padding:0 20px 0 25px;display:flex;justify-content:space-between;background:url(assets/sh_2500.webp) center center/cover no-repeat}</style><section class="main"><style>.main__info{width:61.585%;padding-top:20px;padding-left:20px;background:rgba(255,255,255,.6)}</style><div class="main__info"><style>.main__greeting{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;margin-top:6px;font-size:27px;font-weight:700}</style><div class="main__greeting">Привет, Геннадий!</div><style>.main__status{margin-top:6px;line-height:16px}</style><div class="main__status">Двери и окна закрыты, сигнализация включена.</div><style>.main__weather{margin-top:25px}.weather{display:flex}</style><div class="weather main__weather"><style>.weather__item{margin-right:18px}</style><div class="weather__item"><style>.weather__item-title{color:#858585;margin-bottom:4px}</style><div class="weather__item-title">Дома</div><style>.weather__item-temp{font-size:36px;font-weight:700;line-height:1.16;font-family:"PT Sans Narrow","Helvetica Neue",Helvetica,Arial,sans-serif}</style><div class="weather__item-temp">+23</div></div><style>.weather__item_outside{padding-right:31px}</style><div class="weather__item weather__item_outside weather__item_cloud-drizzle"><div class="weather__item-title">За окном</div><div class="weather__item-temp">+19</div></div></div></div><style>.main__upcoming-wrapper{width:200px;height:100%;overflow:hidden}</style><div class="main__upcoming-wrapper"><style>.main__upcoming{width:220px;height:100%;overflow-y:scroll}</style><div class="main__upcoming"><style>.main__panel{margin-bottom:14px;position:relative}</style><div class="panel main__panel panel_device panel_first"><div class="panel__icon panel__icon_temp_off"></div><div class="panel__text"><div class="panel__title">Philips Cooler</div><div class="panel__sub">Начнет охлаждать в 16:30</div></div></div><div class="panel main__panel panel_device"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">Xiaomi Yeelight LED Smart Bulb</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel main__panel panel_device panel_out_bot"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">Xiaomi Yeelight LED Smart Bulb</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel main__panel panel_device panel_out_bot"><img src="assets/banner_200.jpg"></div></div></div></section></div><style>.content__item_scenarios{padding-right:40px}</style><div class="content__item content__item_half content__item_scenarios"><div class="content__item-header">Избранные сценарии</div><style>.scenarios__paginator{position:absolute;top:0;right:40px}.scenarios_hide{display:none}</style><div class="paginator scenarios__paginator"><div class="paginator__arrow paginator__arrow_disabled paginator__arrow_left"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M8.7 14.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.4 8l6.3 6.3z"></path></svg></div><div class="paginator__arrow paginator__arrow_right"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M.3 14.3c-.4.4-.4 1.02 0 1.4.38.4 1 .4 1.4 0l7-7c.4-.4.4-1.02 0-1.4l-7-7C1.3-.1.68-.1.3.3c-.4.38-.4 1 0 1.4L6.6 8 .3 14.3z"></path></svg></div></div><style>.scenarios{max-height:331px;background:#fff;display:flex;justify-content:flex-start;overflow-x:hidden}.scenarios__page{display:grid;grid-template-columns:repeat(3,200px);grid-template-rows:repeat(3,100px);grid-column-gap:15px;grid-row-gap:15px;justify-content:space-between;margin-right:15px}</style><section class="scenarios"><div class="scenarios__page"><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Выключить весь свет в доме и во дворе</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_clock"></div><div class="panel__text"><div class="panel__title">Я ухожу</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Включить свет в корридоре</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_temp_on"></div><div class="panel__text"><div class="panel__title">Набрать горячую ванну</div><div class="panel__sub">Начнётся в 18:00</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Выключить весь свет в доме и во дворе</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_clock"></div><div class="panel__text"><div class="panel__title">Я ухожу</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Включить свет в корридоре</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_temp_on"></div><div class="panel__text"><div class="panel__title">Набрать горячую ванну</div><div class="panel__sub">Начнётся в 18:00</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Выключить весь свет в доме и во дворе</div></div></div></div><div class="scenarios__page"><div class="panel scenarios__panel"><div class="panel__icon panel__icon_clock"></div><div class="panel__text"><div class="panel__title">Я ухожу</div></div></div></div></section></div><div class="content__item content__item_devices"><style>.content__item-header_devices{padding-left:40px;display:inline-block;margin-right:11px}</style><span class="content__item-header content__item-header_devices">Избранные устройства</span><style>.filter__select{display:none}.filter__item-label{display:inline-block;font-size:13px;line-height:1;font-weight:700;background:#f7f7f7;min-height:30px;padding:8px 13px;border-radius:15px;margin-right:11px;cursor:pointer}</style><div class="filter__select"><button class="filter__select-button" type="button"><span class="button__text">Все</span> <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6"><path d="M10.3 0L5.5 4.7.7 0 0 .7 5.5 6 11 .7z"/></svg></button><div class="filter__select-popup" aria-hidden="true"><div class="filter__select-menu"><div class="filter__select-item filter__select-item_checked" data-group="all">Все</div><div class="filter__select-item" data-group="kitchen">Кухня</div><div class="filter__select-item" data-group="room">Зал</div><div class="filter__select-item" data-group="lamp">Лампочки</div><div class="filter__select-item" data-group="cam">Камеры</div></div></div></div><style>.filter__item-radio{display:none}</style><input class="filter__item-radio filter__item_devices filter__item-radio_all" type="radio" name="filter" id="all" checked="checked"> <label class="filter__item-label filter__item_devices" for="all">Все</label> <input class="filter__item-radio filter__item_devices filter__item-radio_kitchen" type="radio" name="filter" id="kitchen"> <label class="filter__item-label filter__item_devices" for="kitchen">Кухня</label> <input class="filter__item-radio filter__item_devices filter__item-radio_room" type="radio" name="filter" id="room"> <label class="filter__item-label filter__item_devices" for="room">Зал</label> <input class="filter__item-radio filter__item_devices filter__item-radio_lamp" type="radio" name="filter" id="lamp"> <label class="filter__item-label filter__item_devices" for="lamp">Лампочки</label> <input class="filter__item-radio filter__item_devices filter__item-radio_cam" type="radio" name="filter" id="cam"> <label class="filter__item-label filter__item_devices" for="cam">Камеры</label><style>.paginator{height:16px;width:47px;display:flex;justify-content:space-between}.devices__paginator{position:absolute;top:0;right:40px}.paginator div{width:16px}.paginator_hide{display:none}</style><div class="paginator devices__paginator"><style>.paginator__arrow{opacity:1;cursor:pointer}</style><div class="paginator__arrow paginator__arrow_disabled paginator__arrow_left"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M8.7 14.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.4 8l6.3 6.3z"></path></svg></div><div class="paginator__arrow paginator__arrow_right"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M.3 14.3c-.4.4-.4 1.02 0 1.4.38.4 1 .4 1.4 0l7-7c.4-.4.4-1.02 0-1.4l-7-7C1.3-.1.68-.1.3.3c-.4.38-.4 1 0 1.4L6.6 8 .3 14.3z"></path></svg></div></div><style>.devices{display:flex;justify-content:flex-start;overflow-x:hidden;padding:20px 0 6px 40px}.devices::after{content:'';display:inline-block;min-width:25px}</style><section class="devices"><style>.panel{padding:14px;min-height:100px;width:200px;border-radius:20px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;background:#f7f7f7;cursor:pointer;transition:opacity .3s ease-out}.panel_device{height:120px}.devices__panel{margin-right:15px}</style><div class="panel panel_device devices__panel panel_room panel_floor"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Xiaomi Warm Floor</div><div class="panel__sub">Включено</div></div></div><div class="panel panel_device devices__panel panel_lamp"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Xiaomi Yeelight LED Smart Bulb</div><div class="panel__sub">Включено</div></div></div><div class="panel panel_device devices__panel panel_cam"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">D-Link Omna 180 Cam</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel panel_device devices__panel panel_room panel_temp"><div class="panel__icon panel__icon_temp_off"></div><div class="panel__text"><div class="panel__title">Elgato Eve Degree Connected</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel panel_device devices__panel panel_lamp"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">LIFX Mini Day & Dusk A60 E27</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel panel_device devices__panel panel_room"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Xiaomi Mi Air Purifier 2S</div><div class="panel__sub">Включено</div></div></div><div class="panel panel_device devices__panel panel_lamp"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">Philips Zhirui</div><div class="panel__sub">Выключено</div></div></div><div class="panel panel_device devices__panel panel_kitchen"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Philips Purifier</div><div class="panel__sub">Включено</div></div></div></section></div></main></div><style>.footer{flex:0 0 auto;display:flex;justify-content:flex-start;align-items:center;flex-wrap:wrap;padding-left:40px;width:100%;height:60px;font-size:12px}</style><footer class="footer"><a href="#" class="link footer__link">Помощь</a> <a href="#" class="link footer__link">Обратная связь</a> <a href="#" class="link footer__link">Разработчикам</a> <a href="#" class="link footer__link">Условия использования</a></footer></div><style>.modal{display:none;flex-direction:column;justify-content:center;align-items:center;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background:rgba(51,51,51,.5)}.modal_open{display:flex}</style><div class="modal modal_temp"><div class="modal__content"><div class="modal__body"><div class="modal__title">Elgato Eve Degree Connected</div><div class="modal__value modal__value_temp">+23</div><div class="modal__status">Включено</div><div class="modal__filter"><div class="filter__item-label modal__filter-item_temp" id="manual">Вручную</div><div class="filter__item-label modal__filter-item_temp" id="cold">Холодно</div><div class="filter__item-label modal__filter-item_temp" id="warm">Тепло</div><div class="filter__item-label modal__filter-item_temp" id="hot">Жарко</div></div><div class="adjust-bar__container adjust-bar__container_theme_temp modal__adjust"><input class="adjust-bar adjust-bar_theme_temp" type="range" name="lightRange" id="lightRange" value="23" min="-10" max="30" orient="vertical"></div></div><div class="modal__controls"><div class="button button_size_l button_color_yellow modal__button">Применить</div><div class="button button_size_l modal__button modal_close">Закрыть</div></div></div></div><div class="modal modal_light"><div class="modal__content"><div class="modal__body"><div class="modal__title">Xiaomi Yeelight LED Smart Bulb</div><div class="modal__value modal__value_light"></div><div class="modal__status">Включено</div><div class="modal__filter"><div class="filter__item-label modal__filter-item" id="manual">Вручную</div><div class="filter__item-label modal__filter-item" id="day">Дневной свет</div><div class="filter__item-label modal__filter-item" id="evening">Вечерний свет</div><div class="filter__item-label modal__filter-item" id="dawn">Рассвет</div></div><div class="adjust-bar__container adjust-bar__container_theme_light modal__adjust"><input class="adjust-bar adjust-bar_theme_light" type="range" name="tempRange" id="lightRange" value="25" min="0" max="50" orient="vertical"></div></div><div class="modal__controls"><div class="button button_size_l button_color_yellow modal__button">Применить</div><div class="button button_size_l modal__button modal_close">Закрыть</div></div></div></div><div class="modal modal_knob"><div class="modal__content"><div class="modal__body"><div class="modal__title">Xiaomi Warm Floor</div><div class="modal__value modal__value_temp">+23</div><div class="modal__status">Включено</div><div class="knob__wrapper"><div class="knob"><svg viewBox="-110 -110 220 220" id="foobar"><filter id="knob-shadow"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="2" dy="0" result="offsetblur"/><feFlood flood-color="rgba(134,121,71,0.45)"/><feComposite in2="offsetblur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter><g class="knob-container"><circle class="knob_center" cx="0" cy="0"/><circle class="knob__indicator-bg" r="110" cx="0" cy="0"/><circle class="knob__indicator" r="100" cx="0" cy="0"/><circle class="knob__indicator-mask" r="100" cx="0" cy="0"/><circle class="knob__indicator-bounds" r="100" cx="0" cy="0"/><circle class="knob__self" r="89" cx="0" cy="0"/><polygon class="knob__arrow" points="-90,0 -85,5 -85,-5"/></g></svg><div class="knob__value">+23</div></div></div></div><div class="modal__controls"><div class="button button_size_l button_color_yellow modal__button">Применить</div><div class="button button_size_l modal__button modal_close">Закрыть</div></div></div></div><script async src="scripts.bundle.js" crossorigin="anonymous"></script><style>@font-face{font-family:'PT Sans';font-style:normal;font-weight:700;font-display:swap;src:local('PT Sans Bold'),url(fonts/PTS75F_W.woff) format('woff')}@font-face{font-family:'PT Sans Narrow';font-weight:700;font-display:swap;src:local('PT Sans Narrow Bold'),url(fonts/PTN77F_W.woff) format('woff')}.adjust-bar{-webkit-appearance:none;appearance:none;outline:0;border-radius:30px;width:100%;height:60px;margin:0;display:flex;justify-content:space-between;align-items:center;position:relative}.adjust-bar::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;cursor:pointer;width:60px;height:60px;border:3px solid rgba(51,51,51,.1);border-radius:30px;box-shadow:0 0 0 4px #fff}.adjust-bar::-moz-range-thumb{box-sizing:border-box;cursor:pointer;width:60px;height:60px;border:3px solid rgba(51,51,51,.1);border-radius:30px;background:0 0;box-shadow:0 0 0 4px #fff}.adjust-bar::-moz-range-track{background:0 0}.adjust-bar__container_theme_temp{position:relative}.adjust-bar__container_theme_temp::after,.adjust-bar__container_theme_temp::before{color:#fff;font-size:18px;font-weight:700;position:absolute;top:20px;z-index:1;pointer-events:none}.adjust-bar__container_theme_temp::before{content:'–10';left:15px}.adjust-bar__container_theme_temp::after{content:'+30';right:15px}.adjust-bar__container_theme_light{position:relative}.adjust-bar__container_theme_light::after,.adjust-bar__container_theme_light::before{content:'';position:absolute;z-index:1;pointer-events:none}.adjust-bar__container_theme_light::before{top:14px;left:14px;width:30px;height:30px;background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSIjZmZmIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI1Ii8+PHBhdGggZD0iTTExIDB2Mm0wIDE4djJNMy4yMiAzLjIybDEuNDIgMS40Mm0xMi43MiAxMi43MmwxLjQyIDEuNDJNMCAxMWgybTE4IDBoMk0zLjIyIDE4Ljc4bDEuNDItMS40Mk0xNy4zNiA0LjY0bDEuNDItMS40MiIvPjwvZz48L2c+PC9zdmc+) center center/contain no-repeat}.adjust-bar__container_theme_light::after{top:13px;right:13px;width:34px;height:34px;background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNmZmYiPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjUiLz48cGF0aCBkPSJNMTEgMHYybTAgMTh2Mk0zLjIyIDMuMjJsMS40MiAxLjQybTEyLjcyIDEyLjcybDEuNDIgMS40Mk0wIDExaDJtMTggMGgyTTMuMjIgMTguNzhsMS40Mi0xLjQyTTE3LjM2IDQuNjRsMS40Mi0xLjQyIi8+PC9nPjwvZz48L3N2Zz4=) center center/contain no-repeat}.adjust-bar_theme_temp{background-image:linear-gradient(90deg,#068fff 0,#ffd800 50%,#f76b1c 100%)}.adjust-bar_theme_light{background-image:linear-gradient(90deg,#ffe682 0,#ff9e00 100%)}.button{cursor:pointer;display:flex;justify-content:center;align-items:center;background:#fff}.button_color_yellow{background:#ffd93e}.button_size_l{font-size:18px;font-weight:700;height:60px;border-radius:20px}.button:hover{box-shadow:0 2px 6px 0 rgba(255,225,225,.6)}.button:active{box-shadow:none}.filter__item-label:hover{background:#ffd93e}.filter__item-radio:checked+label{background:#ffd93e}.filter__item-radio_kitchen:checked~.devices .panel{display:none}.filter__item-radio_kitchen:checked~.devices .panel_kitchen{display:flex}.filter__item-radio_room:checked~.devices .panel{display:none}.filter__item-radio_room:checked~.devices .panel_room{display:flex}.filter__item-radio_lamp:checked~.devices .panel{display:none}.filter__item-radio_lamp:checked~.devices .panel_lamp{display:flex}.filter__item-radio_cam:checked~.devices .panel{display:none}.filter__item-radio_cam:checked~.devices .panel_cam{display:flex}.footer__link{margin-right:20px}.knob{width:220px;height:220px;display:flex;justify-content:center;align-items:center;position:relative}.knob svg{width:220px;height:220px;transform:rotate(90deg)}.knob__indicator{fill:none;stroke:#f5a623;stroke-width:20px;stroke-dasharray:0 629;transform:rotate(29deg)}.knob__indicator-bounds{fill:transparent;stroke:#fff;stroke-width:21px;stroke-dasharray:99 629;transform:rotate(-29deg)}.knob__indicator-bg{fill:rgba(51,51,51,.7)}.knob__indicator-mask{fill:transparent;stroke:#fff;stroke-width:22px;stroke-dasharray:4 1;transform:rotate(1deg)}.knob__self{fill:#fefefe;filter:url(#knob-shadow);cursor:pointer}.knob__value{font-size:66px;font-weight:700;position:absolute;user-select:none;pointer-events:none}.knob__wrapper{display:flex;justify-content:center;align-items:center;height:80%}.link,.link:active,.link:visited{color:rgba(51,51,51,.6)}.link{text-decoration:none}.link:hover,.link_active{color:inherit}.modal_open .modal__content{animation:modal .2s ease forwards}.modal__title{font-size:27px;font-weight:700;margin-bottom:6px}.modal__value{box-sizing:content-box;position:absolute;top:20px;right:20px;font-size:36px;font-weight:700;max-width:62px;height:40px;padding-right:32px}.modal__value_temp{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE0IDE0Ljc2VjMuNWEyLjUgMi41IDAgMSAwLTUgMHYxMS4yNmE0LjUgNC41IDAgMSAwIDUgMHoiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGZpbGw9IiNGRkQ5M0UiIGZpbGwtcnVsZT0ibm9uemVybyIgY3g9IjExLjUiIGN5PSIxOC41IiByPSIzLjUiLz48L2c+PC9zdmc+) calc(100% + 10px) 0/contain no-repeat}.modal__value_light{height:45px;padding-right:45px;background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiMzMzMiPjxjaXJjbGUgc3Ryb2tlLW9wYWNpdHk9Ii40IiBjeD0iMTEiIGN5PSIxMSIgcj0iNSIvPjxwYXRoIHN0cm9rZS1vcGFjaXR5PSIuMSIgZD0iTTExIDB2Mm0wIDE4djJNMy4yMiAzLjIybDEuNDIgMS40Mm0xMi43MiAxMi43MmwxLjQyIDEuNDJNMCAxMWgybTE4IDBoMk0zLjIyIDE4Ljc4bDEuNDItMS40Mk0xNy4zNiA0LjY0bDEuNDItMS40MiIvPjwvZz48L2c+PC9zdmc+) right center/contain no-repeat}.modal__status{margin-bottom:20px}.modal__adjust{margin-top:25px}.modal__button{width:48.5%}.modal__content{max-width:640px;width:100%}.modal__body{position:relative;flex-shrink:0;padding:25px;margin-bottom:15px;border-radius:20px;background:#fff}.modal__controls{width:100%;display:flex;justify-content:space-between;flex-wrap:wrap}@keyframes modal{from{transform:scale(.2)}to{transform:scale(1)}}.paginator__arrow:hover{opacity:.5}.paginator__arrow:active{opacity:.3}.paginator__arrow_disabled{opacity:.3}.panel:hover{background:#fff;box-shadow:0 2px 6px 0 rgba(197,186,186,.5)}.panel:active{box-shadow:none}.panel_first{margin-top:20px}.panel_last{margin-bottom:20px}.panel__sub{font-size:12px;color:#858585}.panel__title{font-weight:700;margin-bottom:4px}.weather__item_cloud-drizzle{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAllBMVEVHcEw0NDQzMzMzMzMzMzMzMzMzMzMzMzM1NTVQUFAzMzMzMzM3Nzc3NzczMzMzMzM0NDQ2NjZAQEBVVVU1NTU0NDQzMzM1NTU0NDQ0NDQ+Pj4zMzNBQUEzMzMzMzMzMzMzMzMzMzMzMzMzMzObm5s0NDQzMzMzMzMzMzMzMzM2NjY0NDQ0NDQzMzM0NDQzMzM8PDwzMzP9IFJrAAAAMXRSTlMAO/NvaPrE54gF8L8XHfXPNyEIA0dPyihARA+DC9Zst+z+k44Bu36v3OEzYp54ouoR9yg32AAAAepJREFUSMelVVeWgzAMpBgINaQu6aT37Pr+l9vEMsQVkxd9GdljNNJItqzv7ce9dYPSCfzHMm2HmLtjzFgX9Y2QEAVYsGC5a8b0xlhhcWOQoxIrLRo2YDysMW+kwwxrzOIwTOf93mS2qFGaf/UcesC3386JT52lkteObnuId7sZvWqgALmUcy5uFBHsXGVMH+qT2fKWDVzPcpURXIcsfRBLaQPyFKtzREvunPb3HzZ14C7UoIIp2f5NYAnq1JXwxKDW24rckXzPdKAZr8U5G3WhA6UOh/JD4v0lH3o122NOl1viBFfY3DjJZEb/uCYSgKqbmzQB8nj1Di8xgnZhDKhXvbpkNWkxQ/4gqPtz+SCrg2pqdIKgw5Ld1PGBvBYKUOe10WEcOTl6eo06iFShcaL+QFJcZtWkfBkEt7EJhL5j5I8kJhII1HsmgxWa0MtFJhJo+y5U1YWRLTARQUlZp/wZELDC2YU/KiRiAMVd02bs0fHq8yA+5emKtqIwYCMexBX3GrGCZVC+kj47YTDesIP5eVGZK0tK7Fy1LtdDCUKJWjzEKtZTzeMmypTYjfDZhOa3kYFPj3gdX1r0Dx/odNrq4VanxGDq5BuYfABqUHkbJh+AtCpvB1JrwwBSa+PbRH9Z0g+YmFT+vf0DQYCIRn5Lp10AAAAASUVORK5CYII=) 100% 70%/26px no-repeat}.panel__icon{width:24px;height:24px}.panel__icon_temp_off{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE0IDE0Ljc2VjMuNWEyLjUgMi41IDAgMSAwLTUgMHYxMS4yNmE0LjUgNC41IDAgMSAwIDUgMHoiIHN0cm9rZS1vcGFjaXR5PSIuNCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgZmlsbC1vcGFjaXR5PSIuMSIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIiBjeD0iMTEuNSIgY3k9IjE4LjUiIHI9IjMuNSIvPjwvZz48L3N2Zz4=) center center/contain no-repeat}.panel__icon_temp_on{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE0IDE0Ljc2VjMuNWEyLjUgMi41IDAgMSAwLTUgMHYxMS4yNmE0LjUgNC41IDAgMSAwIDUgMHoiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGZpbGw9IiNGRkQ5M0UiIGZpbGwtcnVsZT0ibm9uemVybyIgY3g9IjExLjUiIGN5PSIxOC41IiByPSIzLjUiLz48L2c+PC9zdmc+) center center/contain no-repeat}.panel__icon_light_off{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiMzMzMiPjxjaXJjbGUgc3Ryb2tlLW9wYWNpdHk9Ii40IiBjeD0iMTEiIGN5PSIxMSIgcj0iNSIvPjxwYXRoIHN0cm9rZS1vcGFjaXR5PSIuMSIgZD0iTTExIDB2Mm0wIDE4djJNMy4yMiAzLjIybDEuNDIgMS40Mm0xMi43MiAxMi43MmwxLjQyIDEuNDJNMCAxMWgybTE4IDBoMk0zLjIyIDE4Ljc4bDEuNDItMS40Mk0xNy4zNiA0LjY0bDEuNDItMS40MiIvPjwvZz48L2c+PC9zdmc+) center center/contain no-repeat}.panel__icon_light_on{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIHN0cm9rZT0iI0Y1QTYyMyIgY3g9IjExIiBjeT0iMTEiIHI9IjUiLz48cGF0aCBkPSJNMTEgMHYybTAgMTh2Mk0zLjIyIDMuMjJsMS40MiAxLjQybTEyLjcyIDEyLjcybDEuNDIgMS40Mk0wIDExaDJtMTggMGgyTTMuMjIgMTguNzhsMS40Mi0xLjQyTTE3LjM2IDQuNjRsMS40Mi0xLjQyIiBzdHJva2U9IiNGRkQ5M0UiLz48L2c+PC9nPjwvc3ZnPg==) center center/contain no-repeat}.panel__icon_clock{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTkyNS0yNTBINDQxdjc2OEgtOTI1eiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyIDIpIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIxMCIvPjxwYXRoIG9wYWNpdHk9Ii4zIiBkPSJNMTAgNHY2bDMgMyIvPjwvZz48L2c+PC9zdmc+) center center/contain no-repeat}img{height:auto;max-width:100%;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic}</style></body></html>
+<!doctype html><html><head><meta charset="utf-8"><title>Smarthome</title><link rel="shortcut icon" href="favicon.ico"><link rel="preload" href="fonts/PTS75F_W.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="fonts/PTN77F_W.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="scripts.bundle.js" as="script" crossorigin="anonymous"></head><style>* {
+        box-sizing: border-box;
+    }
+    html {
+        height: 100%;
+    }
+    .page {
+    height: 100%;
+    font: 14px Arial, sans-serif;
+    color: #333;
+    line-height: 1.143;
+    margin: 0 auto;
+    padding: 0;
+    width: 1366px;
+  }</style><body class="page"><style>.page__wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }</style><div class="page__wrapper"><style>.page__wrapper-content {
+                flex: 1 0 auto;
+            }</style><div class="page__wrapper-content"><style>.header {
+                    width: 100%;
+                    height: 92px;
+                    padding: 0 40px;
+                    border-bottom: 1px solid #f0f0f0;
+                    display: flex;
+                    align-items: center;
+                    background: #fff;
+                }</style><header class="header"><style>.logo {
+                        display: inline-block;
+                        width: 108px;
+                        height: 27px;
+                        position: relative;
+                        background-image: url(data:image/png;base64,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);
+                        background-repeat: no-repeat;
+                        background-position: left top;
+                        background-size: cover;
+                    }</style><div class="logo header__logo"><style>.logo__ya {
+                            display: block;
+                            position: absolute;
+                            z-index: 10;
+                            outline: 0;
+                            height: 100%;
+                            width: 69px;
+                            left: 0;
+                            top: 0;
+                        }</style><a href="yandex.ru" class="link logo__ya"></a><style>.logo__ya-sub {
+                            display: block;
+                            position: absolute;
+                            z-index: 5;
+                            outline: 0;
+                            height: 100%;
+                            width: 100%;
+                            left: 0;
+                            top: 0;
+                        }</style><a href="#" class="link logo__ya-sub"></a></div><style>.menu {
+                        margin-left: 52px;
+                    }</style><nav class="menu"><style>.menu__list {
+                            display: flex;
+                            justify-content: flex-start;
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }    
+                        .menu__item {
+                            margin-right: 27px;
+                            font-size: 16px;
+                            font-weight: 700;
+                        }</style><ul class="menu__list"><li class="menu__item"><a href="#" class="link menu__link link_active">Сводка</a></li><li class="menu__item"><a href="#" class="link menu__link">Устройства</a></li><li class="menu__item"><a href="#" class="link menu__link">Сценарии</a></li></ul></nav><style>.menu__icon {
+                        display: none;
+                    }</style><div class="menu__icon"><svg width="16" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 3.326a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.681A.995.995 0 0 1 15 5H1c-.552 0-1-.44-1-.993v-.68zM0 8.66a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .993H1c-.552 0-1-.44-1-.993v-.68zm0 5.333A.995.995 0 0 1 1 13h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .994H1c-.552 0-1-.44-1-.993v-.681z" id="a"/></defs><use fill="#333" xlink:href="#a" transform="translate(0 -2)" fill-rule="evenodd"/></svg></div></header><style>.content {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding-top: 29px;
+                }</style><main class="content"><style>.content__item {
+                        width: 100%;
+                        margin-bottom: 29px;
+                        position: relative;
+                    }
+                    .content__item_half {
+                        width: 49%;
+                    }
+                    .content__item_main {
+                        padding-left: 40px;
+                    }
+                    .content__item-header {
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                    }</style><div class="content__item content__item_half content__item_main"><div class="content__item-header">Главное</div><style>.main {
+                            height: 331px;
+                            border-radius: 20px;
+                            padding: 0 20px 0 25px;
+                            display: flex;
+                            justify-content: space-between;
+                            background: url("assets/sh_2500.webp") center center/cover no-repeat;
+                        }</style><section class="main"><style>.main__info {
+                                width: 61.585%;
+                                padding-top: 20px;
+                                padding-left: 20px;
+                                background: rgba(255,255,255,0.6);
+                            }</style><div class="main__info"><style>.main__greeting {
+                                    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                    margin-top: 6px;
+                                    font-size: 27px;
+                                    font-weight: 700;
+                                }</style><div class="main__greeting">Привет, Геннадий!</div><style>.main__status {
+                                    margin-top: 6px;
+                                    line-height: 16px;
+                                }</style><div class="main__status">Двери и окна закрыты, сигнализация включена.</div><style>.main__weather {
+                                    margin-top: 25px;
+                                }
+                                .weather {
+                                    display: flex;
+                                }</style><div class="weather main__weather"><style>.weather__item {
+                                        margin-right: 18px;
+                                    }</style><div class="weather__item"><style>.weather__item-title {
+                                            color: #858585;
+                                            margin-bottom: 4px;
+                                        }</style><div class="weather__item-title">Дома</div><style>.weather__item-temp {
+                                            font-size: 36px;
+                                            font-weight: 700;
+                                            line-height: 1.16;
+                                            font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                        }</style><div class="weather__item-temp">+23</div></div><style>.weather__item_outside {
+                                        padding-right: 31px;
+                                    }</style><div class="weather__item weather__item_outside weather__item_cloud-drizzle"><div class="weather__item-title">За окном</div><div class="weather__item-temp">+19</div></div></div></div><style>.main__upcoming-wrapper {
+                                width: 200px;
+                                height: 100%;
+                                overflow: hidden;
+                            }</style><div class="main__upcoming-wrapper"><style>.main__upcoming {
+                                width: 220px;
+                                height: 100%;
+                                overflow-y: scroll;
+                            }</style><div class="main__upcoming"><style>.main__panel {
+                                    margin-bottom: 14px;
+                                    position: relative;
+                                }</style><div class="panel main__panel panel_device panel_first"><div class="panel__icon panel__icon_temp_off"></div><div class="panel__text"><div class="panel__title">Philips Cooler</div><div class="panel__sub">Начнет охлаждать в 16:30</div></div></div><div class="panel main__panel panel_device"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">Xiaomi Yeelight LED Smart Bulb</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel main__panel panel_device panel_out_bot"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">Xiaomi Yeelight LED Smart Bulb</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel main__panel panel_device panel_out_bot"><img src="assets/banner_200.jpg"></div></div></div></section></div><style>.content__item_scenarios {
+                        padding-right: 40px;
+                    }</style><div class="content__item content__item_half content__item_scenarios"><div class="content__item-header">Избранные сценарии</div><style>.scenarios__paginator {
+                        position: absolute;
+                        top: 0;
+                        right: 40px;
+                    }
+                    .scenarios_hide {
+                        display: none;
+                    }</style><div class="paginator scenarios__paginator"><div class="paginator__arrow paginator__arrow_disabled paginator__arrow_left"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M8.7 14.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.4 8l6.3 6.3z"></path></svg></div><div class="paginator__arrow paginator__arrow_right"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M.3 14.3c-.4.4-.4 1.02 0 1.4.38.4 1 .4 1.4 0l7-7c.4-.4.4-1.02 0-1.4l-7-7C1.3-.1.68-.1.3.3c-.4.38-.4 1 0 1.4L6.6 8 .3 14.3z"></path></svg></div></div><style>.scenarios {
+                            max-height: 331px;
+                            background: #fff;
+                            display: flex;
+                            justify-content: flex-start;
+                            overflow-x: hidden;
+                        }
+                        .scenarios__page {
+                            display: grid;
+                            grid-template-columns: repeat(3, 200px);
+                            grid-template-rows: repeat(3, 100px);
+                            grid-column-gap: 15px;
+                            grid-row-gap: 15px;
+                            justify-content: space-between;
+                            margin-right: 15px;
+                        }</style><section class="scenarios"><div class="scenarios__page"><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Выключить весь свет в доме и во дворе</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_clock"></div><div class="panel__text"><div class="panel__title">Я ухожу</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Включить свет в корридоре</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_temp_on"></div><div class="panel__text"><div class="panel__title">Набрать горячую ванну</div><div class="panel__sub">Начнётся в 18:00</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Выключить весь свет в доме и во дворе</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_clock"></div><div class="panel__text"><div class="panel__title">Я ухожу</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Включить свет в корридоре</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_temp_on"></div><div class="panel__text"><div class="panel__title">Набрать горячую ванну</div><div class="panel__sub">Начнётся в 18:00</div></div></div><div class="panel scenarios__panel"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Выключить весь свет в доме и во дворе</div></div></div></div><div class="scenarios__page"><div class="panel scenarios__panel"><div class="panel__icon panel__icon_clock"></div><div class="panel__text"><div class="panel__title">Я ухожу</div></div></div></div></section></div><div class="content__item content__item_devices"><style>.content__item-header_devices {
+                            padding-left: 40px;
+                            display: inline-block;
+                            margin-right: 11px;
+                        }</style><span class="content__item-header content__item-header_devices">Избранные устройства</span><style>.filter__select {
+                        display: none;
+                    }
+                    .filter__item-label {
+                        display: inline-block;
+                        font-size: 13px;
+                        line-height: 1;
+                        font-weight: 700;
+                        background: #f7f7f7;
+                        min-height: 30px;
+                        padding: 8px 13px;
+                        border-radius: 15px;
+                        margin-right: 11px;
+                        cursor: pointer;
+                    }</style><div class="filter__select"><button class="filter__select-button" type="button"><span class="button__text">Все</span> <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6"><path d="M10.3 0L5.5 4.7.7 0 0 .7 5.5 6 11 .7z"/></svg></button><div class="filter__select-popup" aria-hidden="true"><div class="filter__select-menu"><div class="filter__select-item filter__select-item_checked" data-group="all">Все</div><div class="filter__select-item" data-group="kitchen">Кухня</div><div class="filter__select-item" data-group="room">Зал</div><div class="filter__select-item" data-group="lamp">Лампочки</div><div class="filter__select-item" data-group="cam">Камеры</div></div></div></div><style>.filter__item-radio {
+                            display: none;
+                        }</style><input class="filter__item-radio filter__item_devices filter__item-radio_all" type="radio" name="filter" id="all" checked="checked"> <label class="filter__item-label filter__item_devices" for="all">Все</label> <input class="filter__item-radio filter__item_devices filter__item-radio_kitchen" type="radio" name="filter" id="kitchen"> <label class="filter__item-label filter__item_devices" for="kitchen">Кухня</label> <input class="filter__item-radio filter__item_devices filter__item-radio_room" type="radio" name="filter" id="room"> <label class="filter__item-label filter__item_devices" for="room">Зал</label> <input class="filter__item-radio filter__item_devices filter__item-radio_lamp" type="radio" name="filter" id="lamp"> <label class="filter__item-label filter__item_devices" for="lamp">Лампочки</label> <input class="filter__item-radio filter__item_devices filter__item-radio_cam" type="radio" name="filter" id="cam"> <label class="filter__item-label filter__item_devices" for="cam">Камеры</label><style>.paginator {
+                            height: 16px;
+                            width: 47px;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        .devices__paginator {
+                            position: absolute;
+                            top: 0;
+                            right: 40px;
+                        }
+                        .paginator div {
+                            width: 16px;
+                        }
+                        .paginator_hide {
+                            display: none;
+                        }</style><div class="paginator devices__paginator"><style>.paginator__arrow {
+                                opacity: 1;
+                                cursor: pointer;
+                            }</style><div class="paginator__arrow paginator__arrow_disabled paginator__arrow_left"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M8.7 14.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.4 8l6.3 6.3z"></path></svg></div><div class="paginator__arrow paginator__arrow_right"><svg viewBox="0 0 9 16" width="100%" height="16px"><path fill="currentColor" fill-rule="evenodd" d="M.3 14.3c-.4.4-.4 1.02 0 1.4.38.4 1 .4 1.4 0l7-7c.4-.4.4-1.02 0-1.4l-7-7C1.3-.1.68-.1.3.3c-.4.38-.4 1 0 1.4L6.6 8 .3 14.3z"></path></svg></div></div><style>.devices {
+                        display: flex;
+                        justify-content: flex-start;
+                        overflow-x: hidden;
+                        padding: 20px 0 6px 40px;
+                    }
+                    .devices::after {
+                        content: '';
+                        display: inline-block;
+                        min-width: 25px;
+                    }</style><section class="devices"><style>.panel {
+                                padding: 14px;
+                                min-height: 100px;
+                                width: 200px;
+                                border-radius: 20px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                flex-shrink: 0;
+                                background: #f7f7f7;
+                                cursor: pointer;
+                                transition: opacity 0.3s ease-out;
+                            }
+                            .panel_device {
+                                height: 120px;
+                            }
+                            .devices__panel {
+                                margin-right: 15px;
+                            }</style><div class="panel panel_device devices__panel panel_room panel_floor"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Xiaomi Warm Floor</div><div class="panel__sub">Включено</div></div></div><div class="panel panel_device devices__panel panel_lamp"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Xiaomi Yeelight LED Smart Bulb</div><div class="panel__sub">Включено</div></div></div><div class="panel panel_device devices__panel panel_cam"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">D-Link Omna 180 Cam</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel panel_device devices__panel panel_room panel_temp"><div class="panel__icon panel__icon_temp_off"></div><div class="panel__text"><div class="panel__title">Elgato Eve Degree Connected</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel panel_device devices__panel panel_lamp"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">LIFX Mini Day & Dusk A60 E27</div><div class="panel__sub">Включится в 17:00</div></div></div><div class="panel panel_device devices__panel panel_room"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Xiaomi Mi Air Purifier 2S</div><div class="panel__sub">Включено</div></div></div><div class="panel panel_device devices__panel panel_lamp"><div class="panel__icon panel__icon_light_off"></div><div class="panel__text"><div class="panel__title">Philips Zhirui</div><div class="panel__sub">Выключено</div></div></div><div class="panel panel_device devices__panel panel_kitchen"><div class="panel__icon panel__icon_light_on"></div><div class="panel__text"><div class="panel__title">Philips Purifier</div><div class="panel__sub">Включено</div></div></div></section></div></main></div><style>.footer {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-left: 40px;
+            width: 100%;
+            height: 60px;
+            font-size: 12px;
+        }</style><footer class="footer"><a href="#" class="link footer__link">Помощь</a> <a href="#" class="link footer__link">Обратная связь</a> <a href="#" class="link footer__link">Разработчикам</a> <a href="#" class="link footer__link">Условия использования</a></footer></div><style>.modal {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(51, 51, 51, 0.5);
+        }
+        .modal_open {
+            display: flex;
+        }</style><div class="modal modal_temp"><div class="modal__content"><div class="modal__body"><div class="modal__title">Elgato Eve Degree Connected</div><div class="modal__value modal__value_temp">+23</div><div class="modal__status">Включено</div><div class="modal__filter"><div class="filter__item-label modal__filter-item_temp" id="manual">Вручную</div><div class="filter__item-label modal__filter-item_temp" id="cold">Холодно</div><div class="filter__item-label modal__filter-item_temp" id="warm">Тепло</div><div class="filter__item-label modal__filter-item_temp" id="hot">Жарко</div></div><div class="adjust-bar__container adjust-bar__container_theme_temp modal__adjust"><input class="adjust-bar adjust-bar_theme_temp" type="range" name="lightRange" id="lightRange" value="23" min="-10" max="30" orient="vertical"></div></div><div class="modal__controls"><div class="button button_size_l button_color_yellow modal__button">Применить</div><div class="button button_size_l modal__button modal_close">Закрыть</div></div></div></div><div class="modal modal_light"><div class="modal__content"><div class="modal__body"><div class="modal__title">Xiaomi Yeelight LED Smart Bulb</div><div class="modal__value modal__value_light"></div><div class="modal__status">Включено</div><div class="modal__filter"><div class="filter__item-label modal__filter-item" id="manual">Вручную</div><div class="filter__item-label modal__filter-item" id="day">Дневной свет</div><div class="filter__item-label modal__filter-item" id="evening">Вечерний свет</div><div class="filter__item-label modal__filter-item" id="dawn">Рассвет</div></div><div class="adjust-bar__container adjust-bar__container_theme_light modal__adjust"><input class="adjust-bar adjust-bar_theme_light" type="range" name="tempRange" id="lightRange" value="25" min="0" max="50" orient="vertical"></div></div><div class="modal__controls"><div class="button button_size_l button_color_yellow modal__button">Применить</div><div class="button button_size_l modal__button modal_close">Закрыть</div></div></div></div><div class="modal modal_knob"><div class="modal__content"><div class="modal__body"><div class="modal__title">Xiaomi Warm Floor</div><div class="modal__value modal__value_temp">+23</div><div class="modal__status">Включено</div><div class="knob__wrapper"><div class="knob"><svg viewBox="-110 -110 220 220" id="foobar"><filter id="knob-shadow"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="2" dy="0" result="offsetblur"/><feFlood flood-color="rgba(134,121,71,0.45)"/><feComposite in2="offsetblur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter><g class="knob-container"><circle class="knob_center" cx="0" cy="0"/><circle class="knob__indicator-bg" r="110" cx="0" cy="0"/><circle class="knob__indicator" r="100" cx="0" cy="0"/><circle class="knob__indicator-mask" r="100" cx="0" cy="0"/><circle class="knob__indicator-bounds" r="100" cx="0" cy="0"/><circle class="knob__self" r="89" cx="0" cy="0"/><polygon class="knob__arrow" points="-90,0 -85,5 -85,-5"/></g></svg><div class="knob__value">+23</div></div></div></div><div class="modal__controls"><div class="button button_size_l button_color_yellow modal__button">Применить</div><div class="button button_size_l modal__button modal_close">Закрыть</div></div></div></div><script async src="scripts.bundle.js" crossorigin="anonymous"></script><style>@font-face {
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: bold;
+        font-display: swap;
+        src: local('PT Sans Bold'), 
+            url('./fonts/PTS75F_W.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'PT Sans Narrow';
+        font-weight: bold;
+        font-display: swap;
+        src: local('PT Sans Narrow Bold'),
+            url('./fonts/PTN77F_W.woff') format('woff');
+    }
+    .adjust-bar {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        border-radius: 30px;
+        width: 100%;
+        height: 60px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .adjust-bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        border: 3px solid rgba(51, 51, 51, 0.1);
+        border-radius: 30px;
+        box-shadow: 0 0 0 4px #fff;
+    }
+    .adjust-bar::-moz-range-thumb {
+        box-sizing: border-box;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        border: 3px solid rgba(51, 51, 51, 0.1);
+        border-radius: 30px;
+        background: transparent;
+        box-shadow: 0 0 0 4px #fff;
+    }
+    .adjust-bar::-moz-range-track {
+        background: transparent;
+    }
+    .adjust-bar__container_theme_temp {
+        position: relative;
+    }
+    .adjust-bar__container_theme_temp::before, .adjust-bar__container_theme_temp::after {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        top: 20px;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .adjust-bar__container_theme_temp::before {
+        content: '–10';
+        left: 15px;
+    }
+    .adjust-bar__container_theme_temp::after {
+        content: '+30';
+        right: 15px;
+    }
+    .adjust-bar__container_theme_light {
+        position: relative;
+    }
+    .adjust-bar__container_theme_light::before, .adjust-bar__container_theme_light::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .adjust-bar__container_theme_light::before {
+        top: 14px;
+        left: 14px;
+        width: 30px;
+        height: 30px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSIjZmZmIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI1Ii8+PHBhdGggZD0iTTExIDB2Mm0wIDE4djJNMy4yMiAzLjIybDEuNDIgMS40Mm0xMi43MiAxMi43MmwxLjQyIDEuNDJNMCAxMWgybTE4IDBoMk0zLjIyIDE4Ljc4bDEuNDItMS40Mk0xNy4zNiA0LjY0bDEuNDItMS40MiIvPjwvZz48L2c+PC9zdmc+) center center/contain no-repeat;
+    }
+    .adjust-bar__container_theme_light::after {
+        top: 13px;
+        right: 13px;
+        width: 34px;
+        height: 34px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNmZmYiPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjUiLz48cGF0aCBkPSJNMTEgMHYybTAgMTh2Mk0zLjIyIDMuMjJsMS40MiAxLjQybTEyLjcyIDEyLjcybDEuNDIgMS40Mk0wIDExaDJtMTggMGgyTTMuMjIgMTguNzhsMS40Mi0xLjQyTTE3LjM2IDQuNjRsMS40Mi0xLjQyIi8+PC9nPjwvZz48L3N2Zz4=) center center/contain no-repeat;
+    }
+    .adjust-bar_theme_temp {
+        background-image: linear-gradient(90deg, #068fff 0%, #ffd800 50%, #f76b1c 100%);
+    }
+    .adjust-bar_theme_light {
+        background-image: linear-gradient(90deg, #ffe682 0%, #ff9e00 100%);
+    }
+    .button {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }
+    .button_color_yellow {
+        background: #ffd93e;
+    }
+    .button_size_l {
+        font-size: 18px;
+        font-weight: 700;
+        height: 60px;
+        border-radius: 20px;
+    }
+    .button:hover {
+        box-shadow: 0 2px 6px 0 rgba(255, 225, 225, 0.6);
+    }
+    .button:active {
+        box-shadow: none;
+    }
+    .filter__item-label:hover {
+        background: #ffd93e;
+    }
+    .filter__item-radio:checked + label {
+        background: #ffd93e;
+    }
+    .filter__item-radio_kitchen:checked ~ .devices .panel {
+        display: none;
+    }
+    .filter__item-radio_kitchen:checked ~ .devices .panel_kitchen {
+        display: flex;
+    }
+    .filter__item-radio_room:checked ~ .devices .panel {
+        display: none;
+    }
+    .filter__item-radio_room:checked ~ .devices .panel_room {
+        display: flex;
+    }
+    .filter__item-radio_lamp:checked ~ .devices .panel {
+        display: none;
+    }
+    .filter__item-radio_lamp:checked ~ .devices .panel_lamp {
+        display: flex;
+    }
+    .filter__item-radio_cam:checked ~ .devices .panel {
+        display: none;
+    }
+    .filter__item-radio_cam:checked ~ .devices .panel_cam {
+        display: flex;
+    }
+    .footer__link {
+        margin-right: 20px;
+    }
+
+    .knob {
+        width: 220px;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .knob svg {
+        width: 220px;
+        height: 220px;
+        transform: rotate(90deg);
+    }
+    .knob__indicator {
+        fill: none;
+        stroke: #f5a623;
+        stroke-width: 20px;
+        stroke-dasharray: 0 629;
+        transform: rotate(29deg);
+    }
+    .knob__indicator-bounds {
+        fill: transparent;
+        stroke: #fff;
+        stroke-width: 21px;
+        stroke-dasharray: 99 629;
+        transform: rotate(-29deg);
+    }
+    .knob__indicator-bg {
+        fill: rgba(51, 51, 51, 0.7);
+    }
+    .knob__indicator-mask {
+        fill: transparent;
+        stroke: #fff;
+        stroke-width: 22px;
+        stroke-dasharray: 4 1;
+        transform: rotate(1deg);
+    }
+    .knob__self {
+        fill: #fefefe;
+        filter: url("#knob-shadow");
+        cursor: pointer;
+    }
+    .knob__value {
+        font-size: 66px;
+        font-weight: 700;
+        position: absolute;
+        user-select: none;
+        pointer-events: none;
+    }
+    .knob__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+    }
+    .link, .link:active, .link:visited {
+        color: rgba(51, 51, 51, 0.6);
+    }
+    .link {
+        text-decoration: none;
+    }
+    .link_active, .link:hover {
+        color: inherit;
+    }
+    .modal_open .modal__content {
+        animation: modal 0.2s ease forwards;
+    }
+    .modal__title {
+        font-size: 27px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+    .modal__value {
+        box-sizing: content-box;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 36px;
+        font-weight: 700;
+        max-width: 62px;
+        height: 40px;
+        padding-right: 32px;
+    }
+    .modal__value_temp {
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE0IDE0Ljc2VjMuNWEyLjUgMi41IDAgMSAwLTUgMHYxMS4yNmE0LjUgNC41IDAgMSAwIDUgMHoiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGZpbGw9IiNGRkQ5M0UiIGZpbGwtcnVsZT0ibm9uemVybyIgY3g9IjExLjUiIGN5PSIxOC41IiByPSIzLjUiLz48L2c+PC9zdmc+) calc(100% + 10px) 0%/contain no-repeat;
+    }
+    .modal__value_light {
+        height: 45px;
+        padding-right: 45px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiMzMzMiPjxjaXJjbGUgc3Ryb2tlLW9wYWNpdHk9Ii40IiBjeD0iMTEiIGN5PSIxMSIgcj0iNSIvPjxwYXRoIHN0cm9rZS1vcGFjaXR5PSIuMSIgZD0iTTExIDB2Mm0wIDE4djJNMy4yMiAzLjIybDEuNDIgMS40Mm0xMi43MiAxMi43MmwxLjQyIDEuNDJNMCAxMWgybTE4IDBoMk0zLjIyIDE4Ljc4bDEuNDItMS40Mk0xNy4zNiA0LjY0bDEuNDItMS40MiIvPjwvZz48L2c+PC9zdmc+) right center/contain no-repeat;
+    }
+    .modal__status {
+        margin-bottom: 20px;
+    }
+    .modal__adjust {
+        margin-top: 25px;
+    }
+    .modal__button {
+        width: 48.5%;
+    }
+    .modal__content {
+        max-width: 640px;
+        width: 100%;
+    }
+    .modal__body {
+        position: relative;
+        flex-shrink: 0;
+        padding: 25px;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        background: #fff;
+    }
+    .modal__controls {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    @keyframes modal {
+        from {
+        transform: scale(0.2);
+        }
+        to{
+        transform: scale(1);
+        }
+    }
+    .paginator__arrow:hover {
+        opacity: 0.5;
+    }
+    .paginator__arrow:active {
+        opacity: 0.3;
+    }
+    .paginator__arrow_disabled {
+        opacity: 0.3;
+    }
+    .panel:hover {
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+    }
+    .panel:active {
+        box-shadow: none;
+    }
+    .panel_first {
+        margin-top: 20px;
+    }
+    .panel_last {
+        margin-bottom: 20px;
+    }
+    .panel__sub {
+        font-size: 12px;
+        color: #858585;
+    }
+    .panel__title {
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .weather__item_cloud-drizzle {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAllBMVEVHcEw0NDQzMzMzMzMzMzMzMzMzMzMzMzM1NTVQUFAzMzMzMzM3Nzc3NzczMzMzMzM0NDQ2NjZAQEBVVVU1NTU0NDQzMzM1NTU0NDQ0NDQ+Pj4zMzNBQUEzMzMzMzMzMzMzMzMzMzMzMzMzMzObm5s0NDQzMzMzMzMzMzMzMzM2NjY0NDQ0NDQzMzM0NDQzMzM8PDwzMzP9IFJrAAAAMXRSTlMAO/NvaPrE54gF8L8XHfXPNyEIA0dPyihARA+DC9Zst+z+k44Bu36v3OEzYp54ouoR9yg32AAAAepJREFUSMelVVeWgzAMpBgINaQu6aT37Pr+l9vEMsQVkxd9GdljNNJItqzv7ce9dYPSCfzHMm2HmLtjzFgX9Y2QEAVYsGC5a8b0xlhhcWOQoxIrLRo2YDysMW+kwwxrzOIwTOf93mS2qFGaf/UcesC3386JT52lkteObnuId7sZvWqgALmUcy5uFBHsXGVMH+qT2fKWDVzPcpURXIcsfRBLaQPyFKtzREvunPb3HzZ14C7UoIIp2f5NYAnq1JXwxKDW24rckXzPdKAZr8U5G3WhA6UOh/JD4v0lH3o122NOl1viBFfY3DjJZEb/uCYSgKqbmzQB8nj1Di8xgnZhDKhXvbpkNWkxQ/4gqPtz+SCrg2pqdIKgw5Ld1PGBvBYKUOe10WEcOTl6eo06iFShcaL+QFJcZtWkfBkEt7EJhL5j5I8kJhII1HsmgxWa0MtFJhJo+y5U1YWRLTARQUlZp/wZELDC2YU/KiRiAMVd02bs0fHq8yA+5emKtqIwYCMexBX3GrGCZVC+kj47YTDesIP5eVGZK0tK7Fy1LtdDCUKJWjzEKtZTzeMmypTYjfDZhOa3kYFPj3gdX1r0Dx/odNrq4VanxGDq5BuYfABqUHkbJh+AtCpvB1JrwwBSa+PbRH9Z0g+YmFT+vf0DQYCIRn5Lp10AAAAASUVORK5CYII=) 100% 70%/26px no-repeat;
+    }
+    .panel__icon {
+        width: 24px;
+        height: 24px;
+    }
+    .panel__icon_temp_off {
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE0IDE0Ljc2VjMuNWEyLjUgMi41IDAgMSAwLTUgMHYxMS4yNmE0LjUgNC41IDAgMSAwIDUgMHoiIHN0cm9rZS1vcGFjaXR5PSIuNCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgZmlsbC1vcGFjaXR5PSIuMSIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIiBjeD0iMTEuNSIgY3k9IjE4LjUiIHI9IjMuNSIvPjwvZz48L3N2Zz4=) center center/contain no-repeat;
+    }
+    .panel__icon_temp_on {
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE0IDE0Ljc2VjMuNWEyLjUgMi41IDAgMSAwLTUgMHYxMS4yNmE0LjUgNC41IDAgMSAwIDUgMHoiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGZpbGw9IiNGRkQ5M0UiIGZpbGwtcnVsZT0ibm9uemVybyIgY3g9IjExLjUiIGN5PSIxOC41IiByPSIzLjUiLz48L2c+PC9zdmc+) center center/contain no-repeat;
+    }
+    .panel__icon_light_off {
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiMzMzMiPjxjaXJjbGUgc3Ryb2tlLW9wYWNpdHk9Ii40IiBjeD0iMTEiIGN5PSIxMSIgcj0iNSIvPjxwYXRoIHN0cm9rZS1vcGFjaXR5PSIuMSIgZD0iTTExIDB2Mm0wIDE4djJNMy4yMiAzLjIybDEuNDIgMS40Mm0xMi43MiAxMi43MmwxLjQyIDEuNDJNMCAxMWgybTE4IDBoMk0zLjIyIDE4Ljc4bDEuNDItMS40Mk0xNy4zNiA0LjY0bDEuNDItMS40MiIvPjwvZz48L2c+PC9zdmc+) center center/contain no-repeat;
+    }
+    .panel__icon_light_on {
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTExNDAtMjUwSDIyNnY3NjhoLTEzNjZ6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIHN0cm9rZT0iI0Y1QTYyMyIgY3g9IjExIiBjeT0iMTEiIHI9IjUiLz48cGF0aCBkPSJNMTEgMHYybTAgMTh2Mk0zLjIyIDMuMjJsMS40MiAxLjQybTEyLjcyIDEyLjcybDEuNDIgMS40Mk0wIDExaDJtMTggMGgyTTMuMjIgMTguNzhsMS40Mi0xLjQyTTE3LjM2IDQuNjRsMS40Mi0xLjQyIiBzdHJva2U9IiNGRkQ5M0UiLz48L2c+PC9nPjwvc3ZnPg==) center center/contain no-repeat;
+    }
+    .panel__icon_clock {
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTkyNS0yNTBINDQxdjc2OEgtOTI1eiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyIDIpIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIxMCIvPjxwYXRoIG9wYWNpdHk9Ii4zIiBkPSJNMTAgNHY2bDMgMyIvPjwvZz48L2c+PC9zdmc+) center center/contain no-repeat;
+    }
+
+    img {
+        width: auto\9;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+    }</style></body></html>

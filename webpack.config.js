@@ -67,7 +67,6 @@ module.exports = {
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true,
-                minifyCSS: true
             },
             template: './index.html',
             filename: 'index.html'
