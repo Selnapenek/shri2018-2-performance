@@ -7,7 +7,16 @@
     <title>Smarthome</title>
     <link rel="shortcut icon" href="favicon.ico">
 
-    
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            // Весь код регистрации у нас асинхронный.
+            navigator.serviceWorker.register('./sw.js')
+            .then(() => navigator.serviceWorker.ready.then((worker) => {
+                worker.sync.register('syncdata');
+            }))
+            .catch((err) => console.log(err));
+        }
+    </script> -->
 
     <link rel="preload" href="fonts/PTS75F_W.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="fonts/PTN77F_W.woff" as="font" type="font/woff" crossorigin="anonymous">
@@ -141,9 +150,10 @@
                 <div class="menu__icon">
                     <svg width="16" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <defs>
-                            <path d="M0 3.326a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.681A.995.995 0 0 1 15 5H1c-.552 0-1-.44-1-.993v-.68zM0 8.66a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .993H1c-.552 0-1-.44-1-.993v-.68zm0 5.333A.995.995 0 0 1 1 13h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .994H1c-.552 0-1-.44-1-.993v-.681z" id="a"/>
+                            <path d="M0 3.326a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.681A.995.995 0 0 1 15 5H1c-.552 0-1-.44-1-.993v-.68zM0 8.66a.995.995 0 0 1 1-.993h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .993H1c-.552 0-1-.44-1-.993v-.68zm0 5.333A.995.995 0 0 1 1 13h14c.552 0 1 .44 1 .993v.68a.995.995 0 0 1-1 .994H1c-.552 0-1-.44-1-.993v-.681z"
+                                id="a" />
                         </defs>
-                        <use fill="#333" xlink:href="#a" transform="translate(0 -2)" fill-rule="evenodd"/>
+                        <use fill="#333" xlink:href="#a" transform="translate(0 -2)" fill-rule="evenodd" />
                     </svg>
                 </div>
             </header>
@@ -470,7 +480,7 @@
                         <button class="filter__select-button" type="button">
                             <span class="button__text">Все</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6">
-                                <path d="M10.3 0L5.5 4.7.7 0 0 .7 5.5 6 11 .7z"/>
+                                <path d="M10.3 0L5.5 4.7.7 0 0 .7 5.5 6 11 .7z" />
                             </svg>
                         </button>
                         <div class="filter__select-popup" aria-hidden="true">
@@ -488,15 +498,20 @@
                             display: none;
                         }
                     </style>
-                    <input class="filter__item-radio filter__item_devices filter__item-radio_all" type="radio" name="filter" id="all" checked="checked">
+                    <input class="filter__item-radio filter__item_devices filter__item-radio_all" type="radio" name="filter"
+                        id="all" checked>
                     <label class="filter__item-label filter__item_devices" for="all">Все</label>
-                    <input class="filter__item-radio filter__item_devices filter__item-radio_kitchen" type="radio" name="filter" id="kitchen">
+                    <input class="filter__item-radio filter__item_devices filter__item-radio_kitchen" type="radio" name="filter"
+                        id="kitchen">
                     <label class="filter__item-label filter__item_devices" for="kitchen">Кухня</label>
-                    <input class="filter__item-radio filter__item_devices filter__item-radio_room" type="radio" name="filter" id="room">
+                    <input class="filter__item-radio filter__item_devices filter__item-radio_room" type="radio" name="filter"
+                        id="room">
                     <label class="filter__item-label filter__item_devices" for="room">Зал</label>
-                    <input class="filter__item-radio filter__item_devices filter__item-radio_lamp" type="radio" name="filter" id="lamp">
+                    <input class="filter__item-radio filter__item_devices filter__item-radio_lamp" type="radio" name="filter"
+                        id="lamp">
                     <label class="filter__item-label filter__item_devices" for="lamp">Лампочки</label>
-                    <input class="filter__item-radio filter__item_devices filter__item-radio_cam" type="radio" name="filter" id="cam">
+                    <input class="filter__item-radio filter__item_devices filter__item-radio_cam" type="radio" name="filter"
+                        id="cam">
                     <label class="filter__item-label filter__item_devices" for="cam">Камеры</label>
 
                     <style>
@@ -688,7 +703,8 @@
                     <div class="filter__item-label modal__filter-item_temp" id="hot">Жарко</div>
                 </div>
                 <div class="adjust-bar__container adjust-bar__container_theme_temp modal__adjust">
-                    <input class="adjust-bar adjust-bar_theme_temp" type="range" name="lightRange" id="lightRange" value="23" min="-10" max="30" orient="vertical">
+                    <input class="adjust-bar adjust-bar_theme_temp" type="range" name="lightRange" id="lightRange"
+                        value="23" min="-10" max="30" orient="vertical">
                 </div>
             </div>
 
@@ -714,7 +730,8 @@
                     <div class="filter__item-label modal__filter-item" id="dawn">Рассвет</div>
                 </div>
                 <div class="adjust-bar__container adjust-bar__container_theme_light modal__adjust">
-                    <input class="adjust-bar adjust-bar_theme_light" type="range" name="tempRange" id="lightRange" value="25" min="0" max="50" orient="vertical">
+                    <input class="adjust-bar adjust-bar_theme_light" type="range" name="tempRange" id="lightRange"
+                        value="25" min="0" max="50" orient="vertical">
                 </div>
             </div>
 
@@ -736,24 +753,24 @@
                     <div class="knob">
                         <svg viewBox="-110 -110 220 220" id="foobar">
                             <filter id="knob-shadow">
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-                                <feOffset dx="2" dy="0" result="offsetblur"/>
-                                <feFlood flood-color="rgba(134,121,71,0.45)"/>
-                                <feComposite in2="offsetblur" operator="in"/>
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                                <feOffset dx="2" dy="0" result="offsetblur" />
+                                <feFlood flood-color="rgba(134,121,71,0.45)" />
+                                <feComposite in2="offsetblur" operator="in" />
                                 <feMerge>
-                                    <feMergeNode/>
-                                    <feMergeNode in="SourceGraphic"/>
+                                    <feMergeNode />
+                                    <feMergeNode in="SourceGraphic" />
                                 </feMerge>
                             </filter>
                             <g class="knob-container">
-                                <circle class="knob_center" cx="0" cy="0"/>
-                                <circle class="knob__indicator-bg" r="110" cx="0" cy="0"/>
-                                <circle class="knob__indicator" r="100" cx="0" cy="0"/>
-                                <circle class="knob__indicator-mask" r="100" cx="0" cy="0"/>
-                                <circle class="knob__indicator-bounds" r="100" cx="0" cy="0"/>
-                                <circle class="knob__self" r="89" cx="0" cy="0"/>
-                                
-                                <polygon class="knob__arrow" points="-90,0 -85,5 -85,-5"/>
+                                <circle class="knob_center" cx="0" cy="0" />
+                                <circle class="knob__indicator-bg" r="110" cx="0" cy="0" />
+                                <circle class="knob__indicator" r="100" cx="0" cy="0" />
+                                <circle class="knob__indicator-mask" r="100" cx="0" cy="0" />
+                                <circle class="knob__indicator-bounds" r="100" cx="0" cy="0" />
+                                <circle class="knob__self" r="89" cx="0" cy="0" />
+                                <!-- <polygon class="knob__arrow" points="5,-90 0,-85 10,-85" /> -->
+                                <polygon class="knob__arrow" points="-90,0 -85,5 -85,-5" />
                             </g>
                         </svg>
                         <div class="knob__value">+23</div>
