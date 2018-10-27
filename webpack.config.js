@@ -7,10 +7,12 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const ExtractTextPlugins = require("extract-text-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const BrotliPlugin = require('brotli-webpack-plugin');
+// const BrotliPlugin = require('brotli-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 // module settings
@@ -19,10 +21,7 @@ module.exports = {
 
     entry: {
         bundle: [
-            //'./js/libs.js',
             './js/scripts.js',
-
-            // './css/common.css',
         ],
     },
     // TODO: наверное не правильно, но в данном случае думаю лучше вместо dist использовать просто корень (типо как и было в исходном варианте)
@@ -53,21 +52,27 @@ module.exports = {
         // ]),
 
         // Оптимизировал по максимуму
-
         // new ImageminPlugin({
         //     test: /\.(jpe?g|png|webp|svg)$/i,
         // }),
 
-        // new MiniCssExtractPlugin({
-        //     filename: 'styles.css',
-        // }),
 
-        new BrotliPlugin({
-            asset: '[path].br[query]',
-            test: /\.(js|css|html|svg|png|jpe?g)$/,
-            threshold: 10240,
-            minRatio: 0.8
-        })
+        new HtmlWebpackPlugin({
+            inject: false,
+            hash: true,
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true,
+                minifyCSS: true
+            },
+            template: './index.html',
+            filename: 'index.html'
+        }),
+
     ],
 
     optimization: {
@@ -77,8 +82,7 @@ module.exports = {
                 parallel: true,
                 extractComments: true
             }),
-            new OptimizeCSSAssetsPlugin({})
-        ]
+        ],
     },
 
     module: {
@@ -95,21 +99,8 @@ module.exports = {
                     }
                 }
             },
-
-            // css
-            // {
-            //     test: /\.css$/,
-            //     use: [
-            //         MiniCssExtractPlugin.loader,
-            //         {
-            //             loader: 'css-loader',
-            //             options: {
-            //                 url: false
-            //             }
-            //         },
-            //     ]
-            // },
         ],
     },
+    
 
 }
