@@ -8,7 +8,8 @@
 
     const devices = document.querySelector('.devices');
     const panelCountDevs = devices.querySelectorAll('.devices__panel').length;
-    const pagiantorDevs = devices.querySelector('.devices__paginator');
+
+    const pagiantorDevs = document.querySelector('.devices__paginator');
     const arrowLeftDevs = pagiantorDevs.querySelector('.devices__paginator .paginator__arrow_left');
     const arrowRightDevs = pagiantorDevs.querySelector('.devices__paginator .paginator__arrow_right');
     let currentPageDevs = 1;
@@ -103,7 +104,7 @@
     function startDragging(e) {
         e.preventDefault();
         e.stopPropagation();
-        const rad = getMouseAngle(e, document.querySelector('.knob_center'));
+        const rad = getMouseAngle(e, modal_knob.querySelector('.knob_center'));
 
         knobDragged = true;
         prevAngleRad = rad;
@@ -120,7 +121,7 @@
         }
 
         const old = prevAngleRad;
-        let rad = getMouseAngle(e, document.querySelector('.knob_center'));
+        let rad = getMouseAngle(e, modal_knob.querySelector('.knob_center'));
         let delta = rad - old;
 
         prevAngleRad = rad;
@@ -140,7 +141,7 @@
     }
 
     function setEvtListeners() {
-        const elem = document.querySelector('.knob-container');
+        const elem = modal_knob.querySelector('.knob-container');
 
         elem.addEventListener('mousedown', startDragging);
         document.addEventListener('mouseup', stopDragging);
@@ -181,19 +182,19 @@
         document.querySelector('body').style.overflow = 'hidden';
     }
 
-    document.querySelectorAll('.panel_temp').forEach(p => {
+    devices.querySelectorAll('.panel_temp').forEach(p => {
         p.onclick = function () {
             showModal('.modal_temp');
         }
     });
 
-    document.querySelectorAll('.panel_lamp').forEach(p => {
+    devices.querySelectorAll('.panel_lamp').forEach(p => {
         p.onclick = function () {
             showModal('.modal_light');
         }
     });
 
-    document.querySelectorAll('.panel_floor').forEach(p => {
+    devices.querySelectorAll('.panel_floor').forEach(p => {
         p.onclick = function () {
             showModal('.modal_knob');
         }
@@ -202,6 +203,7 @@
     const scenarios = document.querySelector('.scenarios');
     const panelCountScens = scenarios.querySelectorAll('.scenarios__panel').length;
     const pageCountScens = scenarios.querySelectorAll('.scenarios__page').length;
+
     const pagiantorScens = document.querySelector('.scenarios__paginator');
     const arrowLeftScens = pagiantorScens.querySelector('.scenarios__paginator .paginator__arrow_left');
     const arrowRightScens = pagiantorScens.querySelector('.scenarios__paginator .paginator__arrow_right');
@@ -235,11 +237,11 @@
             });
         }
     });
-
-    const selectButton = document.querySelector('.filter__select-button');
-    const selectButtonText = document.querySelector('.filter__select-button .button__text');
-    const selectOptions = document.querySelectorAll('.filter__select-item');
-    const popup = document.querySelector('.filter__select-popup');
+    const filterSelect = document.querySelector('.filter__select');
+    const selectButton = filterSelect.querySelector('.filter__select-button');
+    const selectButtonText = filterSelect.querySelector('.filter__select-button .button__text');
+    const selectOptions = filterSelect.querySelectorAll('.filter__select-item');
+    const popup = filterSelect.querySelector('.filter__select-popup');
 
     selectButton.addEventListener('click', function () {
         popup.classList.toggle('filter__select-popup_open');
