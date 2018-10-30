@@ -6,8 +6,9 @@
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="preload" href="fonts/PTN77F_W.woff" as="font" type="font/woff" crossorigin="anonymous">
 <link rel="preload" href="fonts/PTS75F_W.woff" as="font" type="font/woff" crossorigin="anonymous">
-<link rel="preload" href="scripts.bundle.js" as="script" crossorigin="anonymous">
-<script async src="scripts.bundle.js" crossorigin="anonymous"></script>
+<script async>
+!function(o){var r={};function n(e){if(r[e])return r[e].exports;var t=r[e]={i:e,l:!1,exports:{}};return o[e].call(t.exports,t,t.exports,n),t.l=!0,t.exports}n.m=o,n.c=r,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(o,r,function(e){return t[e]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="../",n(n.s=0)}([function(e,t,o){e.exports=o(1)},function(e,t){var o=document.querySelector(".modal__value");document.querySelector(".adjust-bar.adjust-bar_theme_temp").oninput=function(){o.innerHTML=0<this.value?"+"+this.value:this.value};var r,n,a=document.querySelector(".devices"),l=a.querySelectorAll(".devices__panel").length,c=document.querySelector(".devices__paginator"),i=c.querySelector(".devices__paginator .paginator__arrow_left"),u=c.querySelector(".devices__paginator .paginator__arrow_right"),s=1;c.classList.toggle("paginator_hide",l<7),u.addEventListener("click",function(){s+=1,i.classList.toggle("paginator__arrow_disabled",1===s),a.scroll({top:0,left:1366,behavior:"smooth"})}),i.addEventListener("click",function(){1<s&&(s-=1,i.classList.toggle("paginator__arrow_disabled",1===s),a.scroll({top:0,left:-1366,behavior:"smooth"}))});var d,_=.42,f=-.42,m=265,p=function(e){return Math.floor(Math.abs(360*e*1.73+m)/53+26)},g=document.querySelector(".modal_knob");function h(e){_<e?e=_:e<f&&(e=f),r=p(n=e),g.querySelector(".modal__value").innerHTML="+"+r,g.querySelector(".knob__value").innerHTML="+"+r,g.querySelector(".knob__indicator").style.strokeDasharray=360*n*1.73+m+" 629",g.querySelector(".knob__arrow").style.transform="rotate("+360*n+"deg)"}function v(e,t){var o,r,n=[(o=t.getBoundingClientRect()).left+(o.right-o.left)/2,o.top+(o.bottom-o.top)/2],a=[e.clientX,e.clientY];return e.targetTouches&&e.targetTouches[0]&&(a=[e.targetTouches[0].clientX,e.targetTouches[0].clientY]),r=Math.atan2(a[1]-n[1],a[0]-n[0]),r+=Math.PI/2}var y,b=null,S=null;function q(e){e.preventDefault(),e.stopPropagation();var t=v(e,g.querySelector(".knob_center"));d=!0,b=t,S=n}function L(e){d=!1}function k(e){if(d){var t=b,o=v(e,g.querySelector(".knob_center")),r=o-t;b=o,r<0&&(r+=2*Math.PI),r>Math.PI&&(r-=2*Math.PI);var n=r/Math.PI/2,a=S+n;h(S=a)}}(y=g.querySelector(".knob-container")).addEventListener("mousedown",q),document.addEventListener("mouseup",L),document.addEventListener("mousemove",k),y.addEventListener("touchstart",q),document.addEventListener("touchend",L),document.addEventListener("touchmove",k),h(0),document.querySelectorAll(".modal_close").forEach(function(e){e.onclick=function(){document.querySelectorAll(".modal").forEach(function(e){e.classList.toggle("modal_open",!1),document.querySelector("body").style.overflow="auto"})}});var w={manual:-10,cold:0,warm:23,hot:30};document.querySelectorAll(".modal__filter-item_temp").forEach(function(e){e.onclick=function(){document.querySelector(".adjust-bar_theme_temp").value=w[this.id],document.querySelector(".modal_temp .modal__value").innerHTML=0<w[this.id]?"+"+w[this.id]:w[this.id]}});var E=function(e){document.querySelector(e).classList.toggle("modal_open",!0),document.querySelector("body").style.overflow="hidden"};a.querySelectorAll(".panel_temp").forEach(function(e){e.onclick=function(){E(".modal_temp")}}),a.querySelectorAll(".panel_lamp").forEach(function(e){e.onclick=function(){E(".modal_light")}}),a.querySelectorAll(".panel_floor").forEach(function(e){e.onclick=function(){E(".modal_knob")}});var M=document.querySelector(".scenarios"),P=M.querySelectorAll(".scenarios__panel").length,j=M.querySelectorAll(".scenarios__page").length,T=document.querySelector(".scenarios__paginator"),A=T.querySelector(".scenarios__paginator .paginator__arrow_left"),O=T.querySelector(".scenarios__paginator .paginator__arrow_right"),x=1;T.classList.toggle("paginator_hide",P<=9),O.addEventListener("click",function(){x<j&&(x+=1,O.classList.toggle("paginator__arrow_disabled",x===j),A.classList.toggle("paginator__arrow_disabled",1===x),M.scroll({top:0,left:645,behavior:"smooth"}))}),A.addEventListener("click",function(){1<x&&(x-=1,O.classList.toggle("paginator__arrow_disabled",x===j),A.classList.toggle("paginator__arrow_disabled",1===x),M.scroll({top:0,left:-645,behavior:"smooth"}))})}]);
+</script>
 </head>
 <style>
 * {
@@ -59,7 +60,7 @@ border-bottom: 1px solid #f0f0f0;
 display: flex;
 align-items: center;
 background: #fff;
-}    
+}
 </style>
 <header class="header">
 <style>
@@ -72,7 +73,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAAA2CAMA
 background-repeat: no-repeat;
 background-position: left top;
 background-size: cover;
-}    
+}
 </style>
 <div class="logo header__logo">
 <style>
@@ -85,7 +86,7 @@ height: 100%;
 width: 69px;
 left: 0;
 top: 0;
-}    
+}
 </style>
 <a href="yandex.ru" class="link logo__ya"></a>
 <style>
@@ -102,7 +103,6 @@ top: 0;
 </style>
 <a href="#" class="link logo__ya-sub"></a>
 </div>
-
 <style>
 .menu {
 margin-left: 52px;
@@ -136,7 +136,6 @@ font-weight: 700;
 </ul>
 </nav>
 </header>
-
 <style>
 .content {
 width: 100%;
@@ -164,7 +163,6 @@ font-size: 18px;
 font-weight: 700;
 margin-bottom: 20px;
 }
-
 </style>
 <div class="content__item content__item_half content__item_main">
 <div class="content__item-header">Главное</div>
@@ -216,22 +214,22 @@ display: flex;
 <style>
 .weather__item {
 margin-right: 18px;
-}    
+}
 </style>
 <div class="weather__item">
 <style>
 .weather__item-title {
-    color: #858585;
-    margin-bottom: 4px;
+color: #858585;
+margin-bottom: 4px;
 }
 </style>
 <div class="weather__item-title">Дома</div>
 <style>
 .weather__item-temp {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.16;
-    font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 36px;
+font-weight: 700;
+line-height: 1.16;
+font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 </style>
 <div class="weather__item-temp">+23</div>
@@ -296,7 +294,6 @@ position: relative;
 </div>
 </section>
 </div>
-
 <style>
 .content__item_scenarios {
 padding-right: 40px;
@@ -398,7 +395,6 @@ margin-right: 15px;
 <div class="panel__sub">Начнётся в 18:00</div>
 </div>
 </div>
-
 <div class="panel scenarios__panel">
 <div class="panel__icon panel__icon_light_on"></div>
 <div class="panel__text">
@@ -422,7 +418,7 @@ margin-right: 15px;
 padding-left: 40px;
 display: inline-block;
 margin-right: 11px;
-}    
+}
 </style>
 <span class="content__item-header content__item-header_devices">
 Избранные устройства
@@ -803,7 +799,6 @@ display: flex;
 .footer__link {
 margin-right: 20px;
 }
-
 .knob {
 width: 220px;
 height: 220px;
