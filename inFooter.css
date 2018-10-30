@@ -4,14 +4,14 @@
     font-weight: bold;
     font-display: swap;
     src: local('PT Sans Bold'), 
-        url('./fonts/pt-sans-700.woff2') format('woff2');
+        url('./fonts/PTS75F_W.woff') format('woff');
 }
 @font-face {
     font-family: 'PT Sans Narrow';
     font-weight: bold;
     font-display: swap;
     src: local('PT Sans Narrow Bold'),
-        url('./fonts/pt-sans-narrow-700.woff2') format('woff2');
+        url('./fonts/PTN77F_W.woff') format('woff');
 }
 .adjust-bar {
     -webkit-appearance: none;
